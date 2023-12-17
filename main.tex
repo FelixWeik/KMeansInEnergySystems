@@ -1,29 +1,3 @@
-%==============================================================================
-% short introduction to get template running on WINDOWS
-% further explanation can be found in the pptx
-% can be removed after first compilation 
-%
-% install MikTeX (http://www.miktex.org) - activate auto-install of packages
-% install ActivePerl (https://www.perl.org/) - add to HOME
-% system reboot
-%
-% use command-line or IDE in admin-mode to execute the  following commands
-% in the specified order (pdflatex used because we want the PDF in the end)
-% 
-%
-% After changes in glossary you need to execute the following command 
-% to use the new acronyms
-%
-% makeglossaries ma_mustermann
-%
-% After changes in literature you need to execute the following command
-% to use the new reference
-%
-% bibtex ma_mustermann
-%
-%==============================================================================
-
-% TODO set author and title in header settings
 \input{header}
 \pgfplotsset{compat=1.16}
 \begin{document}
@@ -36,23 +10,19 @@
 
 \frontmatter
 \setcounter{secnumdepth}{3}
-\include{chapters/0-1_titlepage}	% TODO set author and title
+\include{chapters/0-1_titlepage}
 \tableofcontents
-%
-% add content
-%
-
 
 \mainmatter
 %\glsresetall
+
+%==============================================================================
 
 \include{chapters/1_abstract}
 \include{chapters/2_introduction}
 \include{chapters/3_background}
 \include{chapters/4_findings}
 \include{chapters/5_discussion}
-\include{chapters/6_conclusion}
-
 
 \bibliographystyle{cmnat}
 \bibliography{ressources}
