@@ -95,7 +95,6 @@ Therefore, multiple runs for a given \texttt{k} value with different initial clu
 %   - Dabei nicht jede Methodik einzeln aufschlüsseln, eher zusammenfassen.
 %   - Werden die Daten danach weiter verarbeitet (weiterführende Theorien, ...)?
 \section{Methodology of the Research Questions}
-% Der Hauptfokus mag auf den drei Papern liegen, dabei aber möglichst viel anderes zitieren => Richtig böse die .bib vollklatschen
 As presented in \autoref*{cha:introduction}, two research questions are addressed in this thesis.
 Both questions are answered by research papers answering similar questions applying k-means clustering.
 The following sections will introduce the methodologies of the papers for each research question, comparing and discussing them.
@@ -122,10 +121,19 @@ Clustering is performed on the data of the Fairwater Living Lab, which delivers 
 The data is collected by the researchers and includes no noise, therefore no cleanup before applying k-means is necessary.
 After applying k-means, the results are further analyzed using social theories and polling the households' residents.
 
+%//TODO: Werden die Daten normalisiert? 
+
 \subsection{K-Means in the Context of Natural Disaster- and Electrical Fault-Impacted Load Profiles}
 One main paper with several sub-papers is introduced to answer the second research question.
-\textit{Identification of Natural Disaster Impacted Electricity Load Profiles with k-means Clustering Algorithm} \cite{JES-IND} investigating load profile characteristics and identifying natural disaster impacted load profiles based on k-means clustering for Lombok, Indonesia.
+\textit{Identification of Natural Disaster Impacted Electricity Load Profiles with k-means Clustering Algorithm} \cite{JES-IND} investigates load profile characteristics and identifies natural disaster impacted load profiles based on k-means clustering for Lombok, Indonesia.
 Further aims include the identification of post-natural disaster days capturing the characteristics of natural disaster events.
 This helps to understand the impact of natural disasters on the electricity load profile.
 
-Data is collected 
+The methodology contains more steps than the methodologies of the papers above.
+First, data from 2015 to 2022 is collected and prepared.
+The data collection happens in multiple steps: First, the electricity load data and the natural disaster data are collected.
+The data on natural disasters is provided by the National Disaster Management Agency (BNPB) of Indonesia \cite{BNP-CAD}.
+The paper focuses on earthquakes since they happen the most frequently while having a significant impact on the electricity system.
+Therefore data on the time, the Richter scale severity and the epicenter location of the earthquakes is collected.
+
+TODO was macht der MinMaxScaler und warum wird der hier angewendet?
