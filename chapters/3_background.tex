@@ -65,13 +65,13 @@ Therefore it is assumed to be the default initialization method in this thesis.
           The initial cluster centers are chosen according to the used initialization method as explained in \autoref*{subsec:initialisation_methods}.
     \item The average of each cluster is calculated by using $C_i = (1/M) \sum_{j=1}^{M}x_j$ with $C_i$ being the average of cluster $i$, $M$ the number of points in cluster $i$, and $x_j$ the $j$-th point in cluster $i$ \cite{SYA-IKC}.
     \item Iterate over all data points assigning each point to the nearest cluster center.
-          To calculate the distance, the euclidean distance $d = \sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$ are used.
+          To calculate the distance, the euclidean distance $d = \sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$ is used.
     \item Steps 2 and 3 are repeated until the criterion function converges.
           The criterion function is \begin{equation}\label{eq:sse}E=\sum_{i=1}^{k} \sum_{P \in C_i}|p-m_i|\end{equation} with $E$ being the square error-sum, $p$ the point in space, and $m_i$ the average of cluster $C_i$ \cite{LIU-BDE}.
 \end{enumerate}
 
 \subsection{Finding k: The Elbow Method}
-The elbow method is heuristic to find the optimal number $k$ of clusters for a given problem.
+The elbow method is a heuristic to find the optimal number $k$ of clusters for a given problem.
 It is calculated by plotting the square sum of errors (\autoref*{eq:sse}) against the number of clusters.
 The optimal number of clusters is the point where the graph's slope changes the most, which is the so-called elbow \cite{SYA-IKC}.
 
@@ -96,6 +96,30 @@ Therefore, multiple runs for a given \texttt{k} value with different initial clu
 %   - Werden die Daten danach weiter verarbeitet (weiterführende Theorien, ...)?
 \section{Methodology of the Research Questions}
 % Der Hauptfokus mag auf den drei Papern liegen, dabei aber möglichst viel anderes zitieren => Richtig böse die .bib vollklatschen
+As presented in \autoref*{cha:introduction}, two research questions are addressed in this thesis.
+Both questions are answered by research papers answering similar questions applying k-means clustering.
+The following sections will introduce the methodologies of the papers for each research question, comparing and discussing them.
+
 \subsection{K-Means in the Context of Energy-Saving Incentives}
+To answer the first research question, two papers are introduced.
+Each paper has a different perspective on the given question, namely the perspective of the industry and the perspective of private households.
+\textit{Big data-informed energy efficiency assessment of China industry sectors based on K-means clustering} \cite{LIU-BDE} takes the perspective of the industry.
+Using k-means clustering, the paper compares different industry sectors and single companies within these sectors to find high-, medium-, and low-consumption clusters according to different environmental metrics.
+\textit{Identifying Home System of Practices for Energy Use with K-Means Clustering Techniques} \cite{MAL-HBP} takes the perspective of private households.
+Applying social theory to the results of k-means clustering, the paper identifies different home systems of best practices, explaining how habits, behaviors, and socially shared practices exhibit variation in the way households consume energy.
+
+Both papers differ only slightly in their methodology.
+\cite{LIU-BDE} applies k-means to cluster different industry sectors and single companies into high, medium, and low energy efficiency.
+Therefore, the value for $k$ is predefined as three.
+The used data is the list of all companies trading A shares on the Shanghai (SSE, \url{http://www/sse.com.cn}) and Shenzhen stock exchanges (SZSE, \url{http://www.szse.cn}) since these companies are required to disclose their environmental information every year.
+This includes the timespan from 2000 to 2015.
+Since the data is noisy, a cleanup of the data is necessary.
+After applying k-means, no more theories are applied.
+\cite{MAL-HBP} applies k-means to find home systems of best practices (HSOP).
+Each cluster found represents a different HSOP.
+Therefore, the value for $k$ needs to be adjusted according to each dataset.
+Clustering is performed on the data of the Fairwater Living Lab, which delivers data from 39 Australian households from July 1st, 2019 to March 31st, 2021. 
+The data is collected by the researchers and includes no noise, therefore no cleanup before applying k-means is necessary.
+After applying k-means, the results are further analyzed using social theories and polling the households' residents.
 
 \subsection{K-Means in the Context of Natural Disaster- and Electrical Fault-Impacted Load Profiles}
