@@ -1,10 +1,9 @@
 \chapter{Background}
 \label{cha:background}
-% \begin{itemize}
-%     \item existing methods and concepts are fully introduced
-%     \item Mathematics of the methods is correctly covered
-%     \item self-developed/chosen solution method is motivated and described fully
-% \end{itemize}
+% existing methods and concepts are fully introduced
+% Mathematics of the methods is correctly covered
+% self-developed/chosen solution method is motivated and described fully
+
 % Self-developed / chosen solution method is motivated and described fully
 Summarize what the paper aims to do.
 How will the following methodological concepts help to achieve the goal of the paper?
@@ -30,14 +29,50 @@ How will the papers help in answering the research questions?
 
 \section{K-Means Clustering}
 \label{sec:k_means_clustering}
-\subsection{A General k-means Problem}
+% General definition/idea 
+Organizing unlabeled data \cite{EZU-CPF} is the general problem of the clustering analysis.
+The meaningful grouping of such unlabeled data is regarded as data clustering \cite{ABI-RKC}.
+This allows for the identification of patterns and trends in the data, which can be used for further analysis, such as applying more advanced theories and methods.
+
+% Introduce the general problem the algorithm tries to solve
+K-means is a partitional clustering algorithm \cite{SIN-UKC}.
+It is used to group a set of n data points from z dimensions into k clusters.
+This means, that a single partition of the initial dataset is produced with each point being assigned to a distinct cluster \cite{SIN-UKC}.
+Clusters are produced heuristically while optimizing a criterion function defined globally on all data objects or locally on the subset of the data objects \cite{ZHU-EPC}.
+
 \subsection{Mathematical Concepts}
+As mentioned before, k-means divides a set of n data points from z dimensions into k clusters.
+This is done by minimizing the sum of squared distances between a datapoint and its assigned cluster center within the whole cluster \cite{HAR-KMA}.
+Doing this globally is an NP-hard problem.
+Therefore, the algorithm seeks local optima, such that no point can be assigned to a different cluster and the result converges \cite{SEL-GCT}, \cite{HAR-KMA}.
+
+The initial cluster centers are predefined as explained in \autoref*{subsec:initialisation_methods}.
+Next, the means of the initial clusters are calculated.
+Then, each data point is assigned to the cluster with the closest mean.
+These steps are repeated until the cluster centers do not change anymore or the square sum of errors stays the same for multiple iterations \cite{HAR-KMA}.
+
+\begin{enumerate}
+    \item The algorithm requires an input matrix of n data points in z dimensions and the initial cluster centers as k points in z dimensions \cite{HAR-KMA}.
+          The initial cluster centers are chosen according to the used initialization method as explained in \autoref*{subsec:initialisation_methods}.
+    \item The average of each cluster is calculated by using $C_i = (1/M) \sum_{j=1}^{M}x_j$ with $C_i$ being the average of cluster $i$, $M$ the number of points in cluster $i$, and $x_j$ the $j$-th point in cluster $i$ \cite{SYA-IKC}.
+    \item Iterate over all data points assigning each point to the nearest cluster center.
+          To calculate the distance, the euclidean distance $d = \sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$ are used.
+    \item Steps 2 and 3 are repeated until the criterion function converges.
+          The criterion function is $E=\sum_{i=1}^{k} \sum_{P \in C_i}|p-m_i|$ with $E$ being the square error-sum, $p$ the point in space, and $m_i$ the average of cluster $C_i$ \cite{LIU-BDE}.
+\end{enumerate}
+% Runtime complexity
+
 \subsection{Finding k: The Elbow Method}
 \subsection{Initialisation Methods}
+\label{subsec:initialisation_methods}
 \paragraph{RANDOM Approach}
 \paragraph{Forgy Approach}
 \subsection{Strengths and Weaknesses}
+\paragraph*{Strenghts:}
 
+\paragraph*{Weaknesses:}
+Due to the algorithm's greedy nature, the algorithm may converge to a local minimum \cite{JAI-DCB}.
+Therefore, multiple runs for a given \texttt{k} value with different initial cluster centers are needed to obtain the optimal cluster result \cite{EZU-CPF}, \cite{BAR-LVG}.
 
 % Was sollen die folgenden beiden sections vermitteln?
 %  Wichtig: Vergleichen zwischen verschiedenen Methoden, aber nur bei großen Unterschieden.
