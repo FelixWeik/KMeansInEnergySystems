@@ -121,19 +121,47 @@ Clustering is performed on the data of the Fairwater Living Lab, which delivers 
 The data is collected by the researchers and includes no noise, therefore no cleanup before applying k-means is necessary.
 After applying k-means, the results are further analyzed using social theories and polling the households' residents.
 
-%//TODO: Werden die Daten normalisiert? 
+%//TODO: Werden die Daten normalisiert? => evenetuelle Rückschlüsse auf Methodik von Jessen
 
 \subsection{K-Means in the Context of Natural Disaster- and Electrical Fault-Impacted Load Profiles}
+%//TODO So umstellen, dass sich relativ wenig wiederholt
 One main paper with several sub-papers is introduced to answer the second research question.
 \textit{Identification of Natural Disaster Impacted Electricity Load Profiles with k-means Clustering Algorithm} \cite{JES-IND} investigates load profile characteristics and identifies natural disaster impacted load profiles based on k-means clustering for Lombok, Indonesia.
 Further aims include the identification of post-natural disaster days capturing the characteristics of natural disaster events.
 This helps to understand the impact of natural disasters on the electricity load profile.
 
 The methodology contains more steps than the methodologies of the papers above.
+% Data collection
 First, data from 2015 to 2022 is collected and prepared.
 The data collection happens in multiple steps: First, the electricity load data and the natural disaster data are collected.
 The data on natural disasters is provided by the National Disaster Management Agency (BNPB) of Indonesia \cite{BNP-CAD}.
 The paper focuses on earthquakes since they happen the most frequently while having a significant impact on the electricity system.
 Therefore data on the time, the Richter scale severity and the epicenter location of the earthquakes is collected.
 
-TODO was macht der MinMaxScaler und warum wird der hier angewendet?
+% Data preparation (scaling the data)
+The MinMaxScaler is applied to scale the data to a range of 0 to 1.
+It preserves the shape of the original distribution so the original information is not lost \cite{GOG-WSI}.
+For each value $x$ in the dataset, \begin{equation}\label{eq:minmaxscaler} 
+      x_{transformed} = \frac{x - x_{min}}{x_{max} - x_{min}}
+\end{equation} \cite{JOJ-ENP} is applied.
+This is done to avoid the influence of the different scales of the data on the clustering result and therefore improves the total clustering performance \cite{GOG-WSI}.
+The optimal number of clusters is found using the elbow method as explained in \autoref*{sec:k_means_clustering}.
+
+% Seasonal Distribution Analysis
+K-Means is executed on the entire load profile duration and a year-by-year profile duration.
+It is expected to reveal general trends and characteristics as well as precise variations in the load profile.
+After clustering each daily profile will be assigned to a distinct cluster.
+% Separation into normal and abnormal load profiles
+A normal daily electricity load profile is an electricity profile that either resembles the average daily load profile of the specific year in shape and magnitude or is a product of electricity consumer behavior variations.
+An abnormal profile is defined as either experiencing few significant power consumption drops or containing low-magnitude power consumption values that are non-consumer behavior induced.
+
+% Cluster Labelling
+Clusters are labeled either as disturbance-impacted or normal.
+Disturbance-impacted clusters are either natural disaster-impacted or electrical fault-impacted.
+If a natural disaster does not occur simultaneously with an abnormal load profile, the profile is labeled as electrical fault-impacted.
+
+% Further analysis of the data regarding climate resilience capability
+After clustering, the data is further analyzed regarding climate resilience capability.
+This means, the data is analyzed in terms of robustness, resourcefulness, and recovery of the electricity system.
+This includes data on the outbreak of the disruption, the impact size, time at the bottom, and recovery duration. and the average restoration rate of the electricity system.
+
