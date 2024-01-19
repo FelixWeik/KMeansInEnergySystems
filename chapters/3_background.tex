@@ -130,38 +130,56 @@ One main paper with several sub-papers is introduced to answer the second resear
 Further aims include the identification of post-natural disaster days capturing the characteristics of natural disaster events.
 This helps to understand the impact of natural disasters on the electricity load profile.
 
-The methodology contains more steps than the methodologies of the papers above.
-% Data collection
-First, data from 2015 to 2022 is collected and prepared.
-The data collection happens in multiple steps: First, the electricity load data and the natural disaster data are collected.
+The paper's methodology differs in the application of the clusters and the preprocessing.
+First, several datasets are collected: The electricity load profiles from 2015 to 2022, and the data on the natural disasters in the same time frame.
 The data on natural disasters is provided by the National Disaster Management Agency (BNPB) of Indonesia \cite{BNP-CAD}.
-The paper focuses on earthquakes since they happen the most frequently while having a significant impact on the electricity system.
-Therefore data on the time, the Richter scale severity and the epicenter location of the earthquakes is collected.
-
-% Data preparation (scaling the data)
-The MinMaxScaler is applied to scale the data to a range of 0 to 1.
-It preserves the shape of the original distribution so the original information is not lost \cite{GOG-WSI}.
-For each value $x$ in the dataset, \begin{equation}\label{eq:minmaxscaler} 
+Then, the electricity load profile data is scaled by applying the MinMaxScaler \cite{SKL-MMS}.
+For each value $x$ in the dataset is scaled applying \begin{equation}\label{eq:minmaxscaler} 
       x_{transformed} = \frac{x - x_{min}}{x_{max} - x_{min}}
-\end{equation} \cite{JOJ-ENP} is applied.
-This is done to avoid the influence of the different scales of the data on the clustering result and therefore improves the total clustering performance \cite{GOG-WSI}.
-The optimal number of clusters is found using the elbow method as explained in \autoref*{sec:k_means_clustering}.
+\end{equation} for each of the datapoints \cite{JOJ-ENP}.
 
-% Seasonal Distribution Analysis
-K-Means is executed on the entire load profile duration and a year-by-year profile duration.
-It is expected to reveal general trends and characteristics as well as precise variations in the load profile.
-After clustering each daily profile will be assigned to a distinct cluster.
-% Separation into normal and abnormal load profiles
-A normal daily electricity load profile is an electricity profile that either resembles the average daily load profile of the specific year in shape and magnitude or is a product of electricity consumer behavior variations.
-An abnormal profile is defined as either experiencing few significant power consumption drops or containing low-magnitude power consumption values that are non-consumer behavior induced.
+After preprocessing, the elbow method and the k-means clustering algorithm are applied as explained in \autoref*{sec:k_means_clustering}.
+The clustering is executed on the whole dataset and the year-by-year data.
+Each cluster is then labeled as normal or abnormal with abnormal clusters being natural disasters or electrical fault impacted.
+This happens by applying the data on natural disasters and checking whether a natural disaster occurred in the given cluster.
 
-% Cluster Labelling
-Clusters are labeled either as disturbance-impacted or normal.
-Disturbance-impacted clusters are either natural disaster-impacted or electrical fault-impacted.
-If a natural disaster does not occur simultaneously with an abnormal load profile, the profile is labeled as electrical fault-impacted.
+% Was ist wichtig in diesem Absatz bzw. was unterscheidet diese Methodik von denen davor?
+% - Einführung in die gesammelte Datenmenge => wir haben jetzt zwei Datensätze, auf einem wird geclustert, auf dem anderen werden die Cluster danach analysiert
+% - Die Daten werden mit dem MinMaxScaler skaliert
+% - Cluster werden mit den Daten zu den Naturkatastrophen gelabeled => Darauf werden dann die einzelnen Naturkatastrophen auf die Climate Resilience des Systems analysisert
 
-% Further analysis of the data regarding climate resilience capability
-After clustering, the data is further analyzed regarding climate resilience capability.
-This means, the data is analyzed in terms of robustness, resourcefulness, and recovery of the electricity system.
-This includes data on the outbreak of the disruption, the impact size, time at the bottom, and recovery duration. and the average restoration rate of the electricity system.
+
+% % Data collection
+% First, data from 2015 to 2022 is collected and prepared.
+% The data collection happens in multiple steps: First, the electricity load data and the natural disaster data are collected.
+% The data on natural disasters is provided by the National Disaster Management Agency (BNPB) of Indonesia \cite{BNP-CAD}.
+% The paper focuses on earthquakes since they happen the most frequently while having a significant impact on the electricity system.
+% Therefore data on the time, the Richter scale severity and the epicenter location of the earthquakes is collected.
+
+% % Data preparation (scaling the data)
+% The MinMaxScaler is applied to scale the data to a range of 0 to 1.
+% It preserves the shape of the original distribution so the original information is not lost \cite{GOG-WSI}.
+% % For each value $x$ in the dataset is scaled applying \begin{equation}\label{eq:minmaxscaler} 
+% %       x_{transformed} = \frac{x - x_{min}}{x_{max} - x_{min}}
+% % \end{equation} for each of the datapoints \cite{JOJ-ENP}.
+% This is done to avoid the influence of the different scales of the data on the clustering result and therefore improves the total clustering performance \cite{GOG-WSI}.
+% The optimal number of clusters is found using the elbow method as explained in \autoref*{sec:k_means_clustering}.
+
+% % Seasonal Distribution Analysis
+% K-Means is executed on the entire load profile duration and a year-by-year profile duration.
+% It is expected to reveal general trends and characteristics as well as precise variations in the load profile.
+% After clustering each daily profile will be assigned to a distinct cluster.
+% % Separation into normal and abnormal load profiles
+% A normal daily electricity load profile is an electricity profile that either resembles the average daily load profile of the specific year in shape and magnitude or is a product of electricity consumer behavior variations.
+% An abnormal profile is defined as either experiencing few significant power consumption drops or containing low-magnitude power consumption values that are non-consumer behavior induced.
+
+% % Cluster Labelling
+% Clusters are labeled either as disturbance-impacted or normal.
+% Disturbance-impacted clusters are either natural disaster-impacted or electrical fault-impacted.
+% If a natural disaster does not occur simultaneously with an abnormal load profile, the profile is labeled as electrical fault-impacted.
+
+% % Further analysis of the data regarding climate resilience capability
+% After clustering, the data is further analyzed regarding climate resilience capability.
+% This means, the data is analyzed in terms of robustness, resourcefulness, and recovery of the electricity system.
+% This includes data on the outbreak of the disruption, the impact size, time at the bottom, and recovery duration. and the average restoration rate of the electricity system.
 
