@@ -46,7 +46,7 @@ This is done by minimizing the sum of squared distances between a datapoint and 
 Doing this globally is an NP-hard problem.
 Therefore, the algorithm seeks local optima, such that no point can be assigned to a different cluster and the result converges \cite{SEL-GCT}, \cite{HAR-KMA}.
 
-The initial cluster centers are predefined as explained in \autoref*{subsec:initialisation_methods}.
+The initial cluster centers are predefined as explained in \autoref{subsec:initialisation_methods}.
 Next, the means of the initial clusters are calculated.
 Then, each data point is assigned to the cluster with the closest mean.
 These steps are repeated until the cluster centers do not change anymore or the square sum of errors stays the same for multiple iterations \cite{HAR-KMA}.
@@ -62,7 +62,7 @@ Therefore it is assumed to be the default initialization method in this thesis.
 \paragraph*{Pseudocode}
 \begin{enumerate}
     \item The algorithm requires an input matrix of n data points in z dimensions and the initial cluster centers as k points in z dimensions \cite{HAR-KMA}.
-          The initial cluster centers are chosen according to the used initialization method as explained in \autoref*{subsec:initialisation_methods}.
+          The initial cluster centers are chosen according to the used initialization method as explained in \autoref{subsec:initialisation_methods}.
     \item The average of each cluster is calculated by using $C_i = (1/M) \sum_{j=1}^{M}x_j$ with $C_i$ being the average of cluster $i$, $M$ the number of points in cluster $i$, and $x_j$ the $j$-th point in cluster $i$ \cite{SYA-IKC}.
     \item Iterate over all data points assigning each point to the nearest cluster center.
           To calculate the distance, the euclidean distance $d = \sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$ is used.
@@ -72,11 +72,11 @@ Therefore it is assumed to be the default initialization method in this thesis.
 
 \subsection{Finding k: The Elbow Method}
 The elbow method is a heuristic to find the optimal number $k$ of clusters for a given problem.
-It is calculated by plotting the square sum of errors (\autoref*{eq:sse}) against the number of clusters.
+It is calculated by plotting the square sum of errors (\autoref{eq:sse}) against the number of clusters.
 The optimal number of clusters is the point where the graph's slope changes the most, which is the so-called elbow \cite{SYA-IKC}.
 
 \subsection{Strengths and Weaknesses}
-The actual strengths and weaknesses of the algorithm will be discussed in \autoref*{cha:conclusion}.
+The actual strengths and weaknesses of the algorithm will be discussed in \autoref{cha:conclusion}.
 
 \paragraph*{Strengths:}
 
@@ -95,7 +95,7 @@ Therefore, multiple runs for a given \texttt{k} value with different initial clu
 %   - Dabei nicht jede Methodik einzeln aufschlüsseln, eher zusammenfassen.
 %   - Werden die Daten danach weiter verarbeitet (weiterführende Theorien, ...)?
 \section{Methodology of the Research Questions}
-As presented in \autoref*{cha:introduction}, two research questions are addressed in this thesis.
+As presented in \autoref{cha:introduction}, two research questions are addressed in this thesis.
 Both questions are answered by research papers answering similar questions applying k-means clustering.
 The following sections will introduce the methodologies of the papers for each research question, comparing and discussing them.
 
@@ -124,11 +124,10 @@ After applying k-means, the results are further analyzed using social theories a
 %//TODO: Werden die Daten normalisiert? => evenetuelle Rückschlüsse auf Methodik von Jessen
 
 \subsection{K-Means in the Context of Natural Disaster- and Electrical Fault-Impacted Load Profiles}
-%//TODO So umstellen, dass sich relativ wenig wiederholt
 One main paper with several sub-papers is introduced to answer the second research question.
 \textit{Identification of Natural Disaster Impacted Electricity Load Profiles with k-means Clustering Algorithm} \cite{JES-IND} investigates load profile characteristics and identifies natural disaster impacted load profiles based on k-means clustering for Lombok, Indonesia.
 Further aims include the identification of post-natural disaster days capturing the characteristics of natural disaster events.
-This helps to understand the impact of natural disasters on the electricity load profile.
+This helps to understand the impact of natural disasters based on the electricity load profiles.
 
 The paper's methodology differs in the application of the clusters and the preprocessing.
 First, several datasets are collected: The electricity load profiles from 2015 to 2022, and the data on the natural disasters in the same time frame.
@@ -138,7 +137,7 @@ For each value $x$ in the dataset is scaled applying \begin{equation}\label{eq:m
       x_{transformed} = \frac{x - x_{min}}{x_{max} - x_{min}}
 \end{equation} for each of the datapoints \cite{JOJ-ENP}.
 
-After preprocessing, the elbow method and the k-means clustering algorithm are applied as explained in \autoref*{sec:k_means_clustering}.
+After preprocessing, the elbow method and the k-means clustering algorithm are applied as explained in \autoref{sec:k_means_clustering}.
 The clustering is executed on the whole dataset and the year-by-year data.
 Each cluster is then labeled as normal or abnormal with abnormal clusters being natural disasters or electrical fault impacted.
 This happens by applying the data on natural disasters and checking whether a natural disaster occurred in the given cluster.
@@ -163,7 +162,7 @@ This happens by applying the data on natural disasters and checking whether a na
 % %       x_{transformed} = \frac{x - x_{min}}{x_{max} - x_{min}}
 % % \end{equation} for each of the datapoints \cite{JOJ-ENP}.
 % This is done to avoid the influence of the different scales of the data on the clustering result and therefore improves the total clustering performance \cite{GOG-WSI}.
-% The optimal number of clusters is found using the elbow method as explained in \autoref*{sec:k_means_clustering}.
+% The optimal number of clusters is found using the elbow method as explained in \autoref{sec:k_means_clustering}.
 
 % % Seasonal Distribution Analysis
 % K-Means is executed on the entire load profile duration and a year-by-year profile duration.
