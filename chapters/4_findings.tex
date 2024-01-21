@@ -21,7 +21,19 @@ The differences and similarities are juxtaposed for both research questions.
 
 TODO: Delete the paragraphs and summarize both findings in continuous text
 \paragraph*{LIU-BDE:}
-
+% Wie soll dieser Paragraph strukturiert sein?
+% 1. Allgemeine Ergebnisse ansprechen
+% 2. Auf ein Beispiel eingehen (in diesem Fall das Clustering und die Tabelle)
+The results are separated into four parts: Clustering for freshwater consumption, the environmental performance measured on the sulfur dioxide emissions, and the energy efficiency performance measured on the coal consumption.
+The k-means algorithm is applied multiple times for each part: once for the whole dataset containing all industry sectors and for each industry sector separately.
+Therefore, distinct companies can be assigned to a cluster and be compared with other companies from the same or different industry sectors.
+One of the clustering algorithm's results is shown in \autoref{fig:multi_industries_clustering_result_environemental_performance}.
+A certain threshold most companies remain below can be determined.
+Furthermore, the number of companies in each cluster can be counted and compared.
+The results of the assignments for each industry sector according to the environmental performance are shown in \autoref{fig:multi_industries_clustering_result_environemental_performance}.
+Some industry sectors show a clear tendency towards a specific cluster, while others are less evenly distributed.
+Therefore, general cluster structures can be identified with industry sectors being ranked by the chosen metric.
+Also, companies within industry sectors can be compared, which helps detect outliers and best practices.
 
 \begin{figure}
     \centering
@@ -30,7 +42,7 @@ TODO: Delete the paragraphs and summarize both findings in continuous text
     \label{fig:multi_industries_clustering_result_environemental_performance}
 \end{figure}
 
-\begin{table}
+\begin{table}[h]
     \centering
     \begin{tabular}{c|c|c|c|c}
         \texttt{Fields} & \texttt{Sum} & \texttt{Cluster 0} & \texttt{Cluster 1} & \texttt{Cluster 2} \\
@@ -44,7 +56,10 @@ TODO: Delete the paragraphs and summarize both findings in continuous text
     \label{tab:multi_industries_clustering_results_based_on_the_so2_emission}
 \end{table}
 
-\paragraph*{MAL-EMD:}
+\paragraph*{MAL-HBP:}
+% Wie soll dieser Paragraph strukturiert sein?
+% 1. Allgemeine Ergebnisse ansprechen
+% 2. Auf ein Beispiel eingehen (in diesem Fall das Clustering und die Tabelle)
 
 
 \begin{figure}
