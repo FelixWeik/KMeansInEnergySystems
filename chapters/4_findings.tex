@@ -30,7 +30,7 @@ Therefore, distinct companies can be assigned to a cluster and be compared with 
 One of the clustering algorithm's results is shown in \autoref{fig:multi_industries_clustering_result_environemental_performance}.
 A certain threshold most companies remain below can be determined.
 Furthermore, the number of companies in each cluster can be counted and compared.
-The results of the assignments for each industry sector according to the environmental performance are shown in \autoref{fig:multi_industries_clustering_result_environemental_performance}.
+The results of the assignments for each industry sector according to the environmental performance are shown in \autoref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
 Some industry sectors show a clear tendency towards a specific cluster, while others are less evenly distributed.
 Therefore, general cluster structures can be identified with industry sectors being ranked by the chosen metric.
 Also, companies within industry sectors can be compared, which helps detect outliers and best practices.
@@ -60,7 +60,22 @@ Also, companies within industry sectors can be compared, which helps detect outl
 % Wie soll dieser Paragraph strukturiert sein?
 % 1. Allgemeine Ergebnisse ansprechen
 % 2. Auf ein Beispiel eingehen (in diesem Fall das Clustering und die Tabelle)
+The research is conducted on the total data set and the data split into the disctinct households.
+Also, the data is split into winter and summer data.
 
+After clustering the whole dataset several assumptions are made.
+First, dominant routines are spotted by averaging the total dataset.
+This leads to a dual peak average as shown in \autoref{fig:total_data_averaging}.
+Therefore, practices can be socially shared.
+Also, different consumption practices for the summer and winter seasons are found.
+
+After applying k-means to each household, routinized households and less routinized households can be identified.
+Routinized households (\autoref{fig:routinized_household}) show a smaller number of clusters and therefore less HSOPs than less routinized households (\autoref{fig:non_routinized_household}).
+Due to the application of social theories and the survey, two assumptions can be made:
+\begin{itemize}
+    \item Variable lifestyles with different work commitments (e.g. working from home) or family structures (e.g. having children) alter the energy consumption of households \cite{KUR-HBP}.
+    \item If occupants are routinized, their behaviors are repetitive \cite{BRE-EWP}.
+\end{itemize}
 
 \begin{figure}
     \centering
@@ -76,8 +91,31 @@ Also, companies within industry sectors can be compared, which helps detect outl
     \label{fig:non_routinized_household}
 \end{figure}
 
-Variable lifestyles with different work commitments (e.g. working from home) or family structures (e.g. having children) alter the energy consumption of households \cite{KUR-HBP}.
-If occupants are routinized, their behaviors are repetitive \cite{BRE-EWP}.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/malatesta_hsop/malatesta_totalDataAveraging.jpg}
+    \caption{Total Data Averaging \cite{MAL-HBP}}
+    \label{fig:total_data_averaging}
+\end{figure}
+
+\paragraph*{What do both Summaries have in Common?}
+\begin{itemize}
+    \item Clustering can be applied with fixed and variable k (as preferred)
+    \item Clustering can be applied to different subsets of the dataset
+    \item Identifying and comparing of:
+    \begin{itemize}
+        \item Patterns (Malatesta => Habits patterns, clustering of the whole profile; Liu => Some industry sectors are in general more energy consuming than others)
+        \item Tendencies (Liu => Some industry sectors being represented in cluster 0 and cluster 2)
+        \item (Best Practices) rather a conclusion topic
+        \item Outliers (Malatesta => Routinised and less routinized households)
+        \item Shared and individual practices/habits (Malatesta => Whole data clustering)
+        \item Thresholds (Liu => Limits in consumption/emissions are spotted)
+        \item Characteristics of each cluster (Both => Clusters represent a certain characteristic (Practice/Certain Metric); Malatesta => Some practices can be tracked to a certain practice)
+        \item Dominant characteristics/practices (Malatesta => Some habits reappeared several times in multiple clusterings)
+    \end{itemize}
+    \item
+\end{itemize}
+
 \section{Identifying and Differentiating Natural Disaster- and Electrical Fault-Impacted Load Profiles}
 \label{sec:identifying_and_differentiating_natural_disaster_and_electrical_fault_impacted_load_profiles}
 % One paragraph for each research question.
