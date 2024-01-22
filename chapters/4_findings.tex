@@ -52,8 +52,10 @@ Also, companies within industry sectors can be compared, which helps detect outl
         \hline
         Chemical Industry & 144 & 138 & 0 & 6 \\
         Coal Mining and Washing Industry & 60 & 54 & 4 & 2 \\
+        Black Metal Smelting & 75 & 53 & 6 & 16 \\
         Textile Industry & 49 & 49 & 0 & 0 \\
         Paper Products Industry & 47 & 42 & 0 & 5 \\
+        Electricity, Heat Industry & 384 & 274 & 18 & 92 \\
     \end{tabular}
     \caption{Snippet of the Multi-Industries Clustering Results based on the $SO_2$ Emission \cite{LIU-BDE}}
     \label{tab:multi_industries_clustering_results_based_on_the_so2_emission}
@@ -105,14 +107,15 @@ Due to the application of social theories and the survey, two assumptions can be
 \begin{itemize}
     \item Identifying and comparing of:
     \begin{itemize}
-        \item Patterns (Malatesta => Habits patterns, clustering of the whole profile; Liu => Some industry sectors are in general more energy consuming than others)
-        \item Tendencies (Liu => Some industry sectors being represented in cluster 0 and cluster 2)
+        % \item Patterns (Malatesta => Habits patterns, clustering of the whole profile; Liu => Some industry sectors are in general more energy consuming than others)
+        % \item Tendencies (Liu => Some industry sectors being represented in cluster 0 and cluster 2)
         \item (Best Practices) rather a topic for the conclusion
-        \item Outliers (Malatesta => Routinised and less routinized households)
+        % \item Outliers (Malatesta => Routinised and less routinized households)
         \item Shared and individual practices/habits (Malatesta => Whole data clustering)
-        \item Thresholds (Liu => Limits in consumption/emissions are spotted)
-        \item Characteristics of each cluster (Both => Clusters represent a certain characteristic (Practice/Certain Metric); Malatesta => Some practices can be tracked to a certain practice)
+        % \item Thresholds (Liu => Limits in consumption/emissions are spotted)
+        % \item Characteristics of each cluster (Both => Clusters represent a certain characteristic (Practice/Certain Metric); Malatesta => Some practices can be tracked to a certain practice)
         \item Dominant characteristics/practices (Malatesta => Some habits reappeared several times in multiple clusterings)
+        % \item Key industries for energy saving incentives (Liu => Some industry sectors are in general more energy consuming than others)
     \end{itemize}
     \item
 \end{itemize}
@@ -131,7 +134,16 @@ Due to the application of social theories and the survey, two assumptions can be
 % Alles was eigentlich aus dem Background klar sein sollte wird dorthin geschoben
 % => Nur auf die Ergebnisse aus dem Paper eingehen, dabei nicht werten oder eigene Schlussfolgerungen ziehen
 % Die Schritte, wie man zu den Ergebnissen kommt, sollen aus dem Background bereits klar sein
-
+Applying k-means with a fixed value of $k=3$, the datasets are separated into low-, mid-, and highly-efficient industry sectors or companies within these sectors.
+Therefore, general patterns are detected and compared.
+Spotting these general characteristics thresholds and characteristic metrics are determined.
+A clustering example of the environmental impact measured on $SO_2$ emissions is shown in \autoref{fig:multi_industries_clustering_result_environemental_performance}.
+General high-consuming, low-efficient industry sectors are spotted, in this case for example the black metal smelting industry as shown in \autoref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
+Most clusters are represented in one cluster yet some are scattered over several clusters.
+\autoref{tab:multi_industries_clustering_results_based_on_the_so2_emission} shows the electric power and heat supply industry as a fitting example.
+Mostly this is due to a few companies of the reviewed industry sector being less efficient.
+This helps in identifying outliers, which means less efficient sectors and companies.
+Therefore, applying k-means to the given dataset helps in finding a starting point in industry sectors and distinct companies for putting energy-saving incentives into action.
 
 \section{Identifying and Differentiating Natural Disaster- and Electrical Fault-Impacted Load Profiles}
 \label{sec:identifying_and_differentiating_natural_disaster_and_electrical_fault_impacted_load_profiles}
