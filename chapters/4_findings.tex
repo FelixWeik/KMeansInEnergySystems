@@ -12,14 +12,22 @@
 
 This section presents the findings of the papers introduced in \autoref{subsec:k_means_in_the_context_of_energy_saving_incentives}.
 
-\subsection{General Findings}
+\section{General Findings}
 % Das sind die Findings, die auf alle drei Paper zutreffen
-\begin{itemize}
-    \item Clustering can be applied with fixed and variable k (as preferred)
-    \item Clustering can be applied to different subsets of the dataset
-    \item Clustering converges every time (=> No need to check for convergence)
-    \item Clusters can be applied in different contexts 
-\end{itemize}
+Some findings overlapped with the reviewed papers:
+All of the papers apply k-means to the given datasets.
+Some used a fixed value for $k$, while others used a variable value for $k$ that was determined by the elbow method according to the problem.
+Therefore k-means can be applied in different contexts by using different values for $k$ and interpreting the results differently.
+Also, the datasets were split into different subsets to prove different assumptions.
+For example, the dataset was split into different industry sectors to compare them.
+Therefore, k-means can be applied in different contexts and problem statements.
+
+% \begin{itemize}
+%     % \item Clustering can be applied with fixed and variable k (as preferred)
+%     % \item Clustering can be applied to different subsets of the dataset
+%     \item Clustering converges every time (=> No need to check for convergence)
+%     \item Clusters can be applied in different contexts 
+% \end{itemize}
 
 % Wie möchte ich die Research Questions erklären?
 % Es werden nicht die Fragen beantwortet, sondern vielmehr eine Hinführung zur Conclusion gegeben,
@@ -137,7 +145,7 @@ This section presents the findings of the papers introduced in \autoref{subsec:k
 % Die Schritte, wie man zu den Ergebnissen kommt, sollen aus dem Background bereits klar sein
 Applying k-means with a fixed value of $k=3$, the datasets are separated into low-, mid-, and highly-efficient industry sectors or companies within these sectors.
 Therefore, general patterns are detected and compared.
-Spotting these general characteristics thresholds and characteristic metrics are determined.
+Spotting these general characteristics' thresholds and characteristic metrics are determined.
 A clustering example of the environmental impact measured on $SO_2$ emissions is shown in \autoref{fig:multi_industries_clustering_result_environemental_performance}.
 General high-consuming, low-efficient industry sectors are spotted, in this case for example the black metal smelting industry as shown in \autoref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
 Most clusters are represented in one cluster yet some are scattered over several clusters.
@@ -155,6 +163,7 @@ The \texttt{dual peak model} with dip midday is the average consumption habit of
 Analyzing the clustering on the whole dataset gave insights into how habits are shared between different households.
 Dominant HSOPs are identified with general characteristics being found.
 Clustering single household data gave insights into how flexibility and routine affect different energy consumption practices.
+The results varied between two (\autoref{fig:routinized_household}) up to nine (\autoref{fig:non_routinized_household}) clusters per household.
 Due to the application of social theories and surveying the residents, two assumptions are made:
 \begin{itemize}
     \item Variable lifestyles with different work commitments (e.g. working from home) or family structures (e.g. having children) alter the energy consumption of households \cite{KUR-HBP}.
