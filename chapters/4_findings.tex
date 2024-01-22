@@ -109,15 +109,14 @@ Due to the application of social theories and the survey, two assumptions can be
     \begin{itemize}
         % \item Patterns (Malatesta => Habits patterns, clustering of the whole profile; Liu => Some industry sectors are in general more energy consuming than others)
         % \item Tendencies (Liu => Some industry sectors being represented in cluster 0 and cluster 2)
-        \item (Best Practices) rather a topic for the conclusion
+        % \item (Best Practices) topic for the conclusion
         % \item Outliers (Malatesta => Routinised and less routinized households)
-        \item Shared and individual practices/habits (Malatesta => Whole data clustering)
+        % \item Shared and individual practices/habits (Malatesta => Whole data clustering)
         % \item Thresholds (Liu => Limits in consumption/emissions are spotted)
-        % \item Characteristics of each cluster (Both => Clusters represent a certain characteristic (Practice/Certain Metric); Malatesta => Some practices can be tracked to a certain practice)
+        \item Characteristics of each cluster (Both => Clusters represent a certain characteristic (Practice/Certain Metric); Malatesta => Some practices can be tracked to a certain practice)
         \item Dominant characteristics/practices (Malatesta => Some habits reappeared several times in multiple clusterings)
         % \item Key industries for energy saving incentives (Liu => Some industry sectors are in general more energy consuming than others)
     \end{itemize}
-    \item
 \end{itemize}
 
 \paragraph*{General Findings}
@@ -126,6 +125,7 @@ Due to the application of social theories and the survey, two assumptions can be
     \item Clustering can be applied with fixed and variable k (as preferred)
     \item Clustering can be applied to different subsets of the dataset
     \item Clustering converges every time (=> No need to check for convergence)
+    \item Clusters can be applied in different contexts 
 \end{itemize}
 
 \paragraph*{Draft for Findings on Research Question One:}
@@ -147,5 +147,17 @@ Therefore, applying k-means to the given dataset helps in finding a starting poi
 
 \section{Identifying and Differentiating Natural Disaster- and Electrical Fault-Impacted Load Profiles}
 \label{sec:identifying_and_differentiating_natural_disaster_and_electrical_fault_impacted_load_profiles}
-% One paragraph for each research question.
-% Remember to include equations and figures, and cite everything!
+Again, patterns are detected using k-means, yet in a different context with different interpretations.
+Averaging the whole dataset (\autoref{fig:total_data_averaging}) provided insights into dominant practices and habits that are socially shared among the residents of the precinct.
+Also, HSOPs are different for the summer and winter seasons.
+These assumptions can be made due to k-means laying the groundwork for applying social theory and the survey results after the clustering process.
+The \texttt{dual peak model} with dip midday is the average consumption habit of the monitored precinct.
+Analyzing the clustering on the whole dataset gave insights into how habits are shared between different households.
+Dominant HSOPs are identified with general characteristics being found.
+Clustering single household data gave insights into how flexibility and routine affect different energy consumption practices.
+Due to the application of social theories and surveying the residents, two assumptions are made:
+\begin{itemize}
+    \item Variable lifestyles with different work commitments (e.g. working from home) or family structures (e.g. having children) alter the energy consumption of households \cite{KUR-HBP}.
+    \item If occupants are routinized, their behaviors are repetitive \cite{BRE-EWP}.
+\end{itemize}
+Therefore, applying k-means to this data reveals the hidden knowledge of HSOPs and identifies starting points for developing best practices in energy consumption.
