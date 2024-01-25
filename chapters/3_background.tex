@@ -5,12 +5,12 @@
 % self-developed/chosen solution method is motivated and described fully
 
 % Self-developed / chosen solution method is motivated and described fully
-Summarize what the paper aims to do.
-How will the following methodological concepts help to achieve the goal of the paper?
-Why exactly are these concepts chosen?
-What keywords were used to find the papers?
-What were the search results?
-How will the papers help in answering the research questions?
+% Summarize what the paper aims to do.
+% How will the following methodological concepts help to achieve the goal of the paper?
+% Why exactly are these concepts chosen?
+% What keywords were used to find the papers?
+% What were the search results?
+% How will the papers help in answering the research questions?
 
 
 % Was haben sie in den Papers der Research Questions benutzt?
@@ -59,7 +59,9 @@ There are multiple methods to do so, for example, \texttt{RANDOM} \cite{PEN-ECI}
 The \texttt{RANDOM} approach is the most commonly used method due to its simplicity while still being an effective initialization method in terms of convergence speed and robustness \cite{PEN-ECI}.
 Therefore it is assumed to be the default initialization method in this thesis.
 
-\paragraph*{Pseudocode}
+\paragraph*{General Algorithm:}
+K-means can be implemented in multiple variants.
+The most general implementation using the Euclidean distance is shown in the following.
 \begin{enumerate}
     \item The algorithm requires an input matrix of n data points in z dimensions and the initial cluster centers as k points in z dimensions \cite{HAR-KMA}.
           The initial cluster centers are chosen according to the used initialization method as explained in \autoref{subsec:initialisation_methods}.
