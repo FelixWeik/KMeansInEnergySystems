@@ -9,6 +9,41 @@
 % Hauptaussage: K-Means ist toll um Trends zu spotten oder erste Eigenschaften aus einer Datenmenge herauszulesen, 
 % allerdings kann man diesen Algorithmus nicht blind auf jedes Problem anwenden
 
+This review work introduced the k-means clustering algorithm as a tool to efficiently generate knowledge out of data.
+This was done on two research questions, namely "\textit{How can k-means help to improve the design of energy-saving incentives?}" and "\textit{Can k-means identify and differentiate natural disaster-impacted load profiles?}".
+
+Both research questions showed, that k-means is a powerful tool for spotting trends and characteristics in data.
+It helps spot the most energy-intensive sectors and companies in big data masses, which helps provide targeted support and reduce information asymmetry \cite{LIU-BDE}.
+It can lay the foundation for applying more advanced methods and theory, thus revealing even more knowledge \cite{MAL-HBP}.
+Therefore, k-means is a powerful tool for finding trends, identifying characteristics and revealing hidden knowledge in big data masses.
+
+Also, the flaws of the algorithm were discussed.
+It was shown, that k-means cannot spot single outliers in big datasets \cite{JES-IND}.
+Therefore, the detection of single earthquakes failed despite finding general load profile trends and seasonal patterns \cite{JES-IND}.
+Furthermore, due to the algorithm being sensitive to initial starting conditions and the chosen value for $k$, multiple runs with different initial cluster centers are needed to obtain the optimal cluster result \cite{JAI-DCB}, \cite{EZU-CPF}, \cite{BAR-LVG}.
+Also, result manipulation is possible due to the algorithm not always finding obvious cluster structures \cite{BOU-RPK}.
+This makes the algorithm computationally expensive and time-consuming, despite the actual algorithm being simple and fast.
+
+Therefore, despite its obvious benefits, k-means is not a universally applicable tool.
+It is important to differentiate problems that can be solved with k-means from problems that cannot or should not be solved with k-means.
+Sometimes, the algorithm is not the right tool for the job which makes alternative algorithms necessary.
+
+% The first research question was addressed from two different perspectives, private housing and the Chinese industry.
+% Liu et al. \cite{LIU-BDE} used k-means to cluster industry sectors and individual companies based on chosen environmental and economic metrics.
+% The clustering results helped identify the most energy-intensive sectors and companies, which can be used to target energy-saving incentives.
+% Industrial sectors, regions and companies can be compared by their spotted performances, thus helping to provide targetted support.
+% Also, information asymmetry between the government and the companies is reduced, as the disclosed data is fully analyzed despite the lack of actuators.
+% Therefore, k-means is a powerful tool for finding characteristics and patterns in big data masses.
+% Malatesta et al. \cite{MAL-HBP} used k-means to cluster private households based on their energy load profiles.
+% Different HSOPs were identified, disclosing hidden knowledge about how best practices, habits and routines alter the standard energy consumption profile.
+% Clustering results were then analyzed further by linking them to social theories and survey results.
+% This helped to understand the underlying reasons for the different HSOPs.
+% The results can be used to develop best practices and habits since the residents experience first hand on how their behaviors affect the general load profiles.
+% This helps energy providers to better predict the energy demand and to plan accordingly.
+% Also, the results can be used to design energy-saving incentives that are tailored to the different HSOPs.
+% This showed, that k-means can lay the groundwork for applying more advanced theory and is therefore a powerful tool to preprocess data for further analysis.
+
+
 % \subsection{Strengths and Weaknesses}
 % The actual strengths and weaknesses of the algorithm will be discussed in \autoref{cha:conclusion}.
 
@@ -21,24 +56,24 @@
 % - Anhand der Ergebnisse des Papers eigene Rückschlüsse ziehen, dabei Grafiken und Tabellen aus den Papern verwenden
 % - Dabei immer im Kontext der Research Questions bleiben
 % - Hier werden also die Fragen beantwortet
-General Findings:
-\begin{itemize}
-    \item K-Means can be applied in different contexts by interpreting the results differently (Liu => industry assessment; Malatesta => Variable k with each cluster being a HSOP)
-\end{itemize}
+% General Findings:
+% \begin{itemize}
+%     \item K-Means can be applied in different contexts by interpreting the results differently (Liu => industry assessment; Malatesta => Variable k with each cluster being a HSOP)
+% \end{itemize}
 
-The following conclusions were presented in the proseminar presentation:
-Efficiency Assessment:
-\begin{itemize}
-    \item Revelation of hidden valuable knowledge (efficient analysis of big data masses; first step into making data more publicly available, allows to work with more advanced theories and models)
-    \item industrial sectors, regions and companies can be compared (exemplary functions, targetted support)
-    \item No more information asymmetry (disclosed data is fully analyzed, no more hidden information)
-\end{itemize}
+% The following conclusions were presented in the proseminar presentation:
+% Efficiency Assessment:
+% \begin{itemize}
+%     \item Revelation of hidden valuable knowledge (efficient analysis of big data masses; first step into making data more publicly available, allows to work with more advanced theories and models)
+%     \item industrial sectors, regions and companies can be compared (exemplary functions, targetted support)
+%     \item No more information asymmetry (disclosed data is fully analyzed, no more hidden information)
+% \end{itemize}
 
-HSOPs:
-\begin{itemize}
-    \item Social Theories can be linked to data (reveals even more knowledge; would not have been possible without clustering first)
-    \item better development of best practices and habits (residents experience how their behavior affects the general load profiles)
-    \item 
-\end{itemize}
+% HSOPs:
+% \begin{itemize}
+%     \item Social Theories can be linked to data (reveals even more knowledge; would not have been possible without clustering first)
+%     \item better development of best practices and habits (residents experience how their behavior affects the general load profiles)
+%     \item 
+% \end{itemize}
 
-Working from home is not observed with typical working structures and therefore not applicable to the standard energy load profile \cite{HAM-EED}. 
+% Working from home is not observed with typical working structures and therefore not applicable to the standard energy load profile \cite{HAM-EED}. 
