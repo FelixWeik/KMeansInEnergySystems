@@ -43,7 +43,7 @@ Clusters are produced heuristically while optimizing a criterion function define
 \subsection{Mathematical Concepts}
 As mentioned before, k-means divides a set of n data points from z dimensions into k clusters.
 This is done by minimizing the sum of squared distances between a datapoint and its assigned cluster center within the whole cluster \cite{HAR-KMA}.
-Doing this globally is an NP-hard problem.
+Doing this globally exists, yet it is computationally expensive \cite{LIS-GKC}.
 Therefore, the algorithm seeks local optima, such that no point can be assigned to a different cluster and the result converges \cite{SEL-GCT}, \cite{HAR-KMA}.
 
 The initial cluster centers are predefined as explained in \autoref{subsec:initialisation_methods}.
@@ -76,6 +76,16 @@ The most general implementation using the Euclidean distance is shown in the fol
 The elbow method is a heuristic to find the optimal number $k$ of clusters for a given problem.
 It is calculated by plotting the square sum of errors (\autoref{eq:sse}) against the number of clusters.
 The optimal number of clusters is the point where the graph's slope changes the most, which is the so-called elbow \cite{SYA-IKC}.
+
+\subsection{Data Scaling: The MinMaxScaler}
+The MinMaxScaler is a data scaling tool of the \texttt{Scikit Learn} library \cite{SKL-MMS}.
+It scales given data to a range of 0 to 1, yet it keeps the shape of the original distribution.
+Most of the following papers use this scaler before applying k-means clustering.
+For each value $x$ in the dataset is scaled applying \begin{equation}\label{eq:minmaxscaler} 
+      x_{transformed} = \frac{x - x_{min}}{x_{max} - x_{min}}
+\end{equation} for each of the datapoints \cite{JOJ-ENP}.
+This ensures that the different scales of the data do not influence the clustering result and therefore improves the total clustering performance \cite{GOG-WSI}.
+
 % Weniger Detail => Was machen die Papers um zu den Findings zu kommen anstatt
 %//TODO More details Energy-related research question, more on discussion and outlook, compare other methods
 
@@ -90,54 +100,26 @@ The optimal number of clusters is the point where the graph's slope changes the 
 %   - Dabei nicht jede Methodik einzeln aufschlüsseln, eher zusammenfassen.
 %   - Werden die Daten danach weiter verarbeitet (weiterführende Theorien, ...)?
 \section{Methodology of the Research Questions}
-As presented in \autoref{cha:introduction}, two research questions are addressed in this thesis.
-Both questions are answered by research papers answering similar questions applying k-means clustering.
-The following sections will introduce the methodologies of the papers for each research question, comparing and discussing them.
+\label{sec:methodology_of_the_research_questions}
+Three papers provide findings impacting the given research questions.
+Each paper has a different perspective on the given question, namely the perspective of the industry, private households, and energy load profiles of a specific country.
+The following section describes the goals of each paper and how the research is conducted to achieve these goals.
 
-\subsection{K-Means in the Context of Energy-Saving Incentives}
-\label{subsec:k_means_in_the_context_of_energy_saving_incentives}
-To answer the first research question, two papers are introduced.
-Each paper has a different perspective on the given question, namely the perspective of the industry and the perspective of private households.
-\textit{Big data-informed energy efficiency assessment of China industry sectors based on K-means clustering} \cite{LIU-BDE} takes the perspective of the industry.
-Using k-means clustering, the paper compares different industry sectors and single companies within these sectors to find high-, medium-, and low-consumption clusters according to different environmental metrics.
-\textit{Identifying Home System of Practices for Energy Use with K-Means Clustering Techniques} \cite{MAL-HBP} takes the perspective of private households.
-Applying social theory to the results of k-means clustering, the paper identifies different home systems of best practices, explaining how habits, behaviors, and socially shared practices exhibit variation in the way households consume energy.
+"\textit{Big Data-Informed Energy Efficiency Assessment of China Industry Sectors based on K-Means Clustering}" \cite{LIU-BDE} focuses on clustering Chinese industry sectors and distinct companies into three clusters, based on environmental perfomance derived metrics.
+Liu et al. apply k-means clustering on disclosed environmental performance data of 15128 Chinese companies between 2000 and 2015.
+By applying k-means clustering with a fixed value of $k=3$, the companies and industry sectors are divided into low-, mid-, and high-performing clusters according to the chosen metrics, for example, $SO_2$ emissions.
 
-Both papers differ only slightly in their methodology.
-\cite{LIU-BDE} applies k-means to cluster different industry sectors and single companies into high, medium, and low energy efficiency.
-Therefore, the value for $k$ is predefined as three.
-The used data is the list of all companies trading A shares on the Shanghai (SSE, \url{http://www/sse.com.cn}) and Shenzhen stock exchanges (SZSE, \url{http://www.szse.cn}) since these companies are required to disclose their environmental information every year.
-This includes the timespan from 2000 to 2015.
-Since the data is noisy, a cleanup of the data is necessary.
-After applying k-means, no more theories are applied.
-\cite{MAL-HBP} applies k-means to find home systems of best practices (HSOP).
-Each cluster found represents a different HSOP.
-Therefore, the value for $k$ needs to be adjusted according to each dataset.
-Clustering is performed on the data of the Fairwater Living Lab, which delivers data from 39 Australian households from July 1st, 2019 to March 31st, 2021. 
-The data is collected by the researchers and includes no noise, therefore no cleanup before applying k-means is necessary.
-After applying k-means, the results are further analyzed using social theories and polling the households' residents.
-The social data of each household is obtained by a survey, which is distributed to all households of the monitored households.
+"\textit{Identifying Home System of Practices for Energy Use with K-Means Clustering}" \cite{MAL-HBP} focuses on finding home systems of practices (HSOPs) by clustering energy load profiles of 39 private households in Blacktown, Australia.
+Each cluster represents a home system of practices (HSOP), a habit or behavior that alters the standard load profile.
+By applying social theory and survey results distributed to the households' residents afterwards it can be derived how behaviors and habits impact electricity consumption.
 
-% Liu macht nur Daten-Cleaning, Malatesta auch
+"\textit{Identification of Natural Disaster Impacted Electricity Laod Profiles with k-means Clustering Algorithm}" \cite{JES-IND} investigates the load profiles of Lombok, Indonesia between 2015 and 2022.
+The data is clustered in a varying number of clusters.
+These clusters are then labeled as normal or abnormal, with abnormal being either natural disaster-impacted or electrical fault-impacted which means, non human induced.
+This shows how k-means helps in understanding patterns, trends and the consequences of different impacts on the electricity load profiles.
 
-\subsection{K-Means in the Context of Natural Disaster- and Electrical Fault-Impacted Load Profiles}
-One main paper with several sub-papers is introduced to answer the second research question.
-\textit{Identification of Natural Disaster Impacted Electricity Load Profiles with k-means Clustering Algorithm} \cite{JES-IND} investigates load profile characteristics and identifies natural disaster impacted load profiles based on k-means clustering for Lombok, Indonesia.
-Further aims include the identification of post-natural disaster days capturing the characteristics of natural disaster events.
-This helps to understand the impact of natural disasters based on the electricity load profiles.
-
-The paper's methodology differs in the application of the clusters and the preprocessing.
-First, several datasets are collected: The electricity load profiles from 2015 to 2022, and the data on the natural disasters in the same time frame.
-The data on natural disasters is provided by the National Disaster Management Agency (BNPB) of Indonesia \cite{BNP-CAD}.
-Then, the electricity load profile data is scaled by applying the MinMaxScaler \cite{SKL-MMS}.
-For each value $x$ in the dataset is scaled applying \begin{equation}\label{eq:minmaxscaler} 
-      x_{transformed} = \frac{x - x_{min}}{x_{max} - x_{min}}
-\end{equation} for each of the datapoints \cite{JOJ-ENP}.
-
-After preprocessing, the elbow method and the k-means clustering algorithm are applied as explained in \autoref{sec:k_means_clustering}.
-The clustering is executed on the whole dataset and the year-by-year data.
-Each cluster is then labeled as normal or abnormal with abnormal clusters being natural disasters or electrical fault impacted.
-This happens by applying the data on natural disasters and checking whether a natural disaster occurred in the given cluster.
+All of these papers contribute to understanding general electricity load profiles and how different impacts alter the consumption data.
+The results are then used to conclude how the design of energy-saving incentives can be improved.
 
 % Was ist wichtig in diesem Absatz bzw. was unterscheidet diese Methodik von denen davor?
 % - Einführung in die gesammelte Datenmenge => wir haben jetzt zwei Datensätze, auf einem wird geclustert, auf dem anderen werden die Cluster danach analysiert
