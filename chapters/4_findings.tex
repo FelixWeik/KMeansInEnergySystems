@@ -79,13 +79,6 @@ This lays the groundwork for revealing hidden knowledge in the data, enabling mo
 % Therefore, general cluster structures can be identified with industry sectors being ranked by the chosen metric.
 % Also, companies within industry sectors can be compared, which helps detect outliers and best practices.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{figures/liu_assessmentOfIndustries/liu_environmentalPerformance.jpg}
-    \caption{Multi-Industries Clustering Result based on the $SO_2$ Emission \cite{LIU-BDE}}
-    \label{fig:multi_industries_clustering_result_environemental_performance}
-\end{figure}
-
 \begin{table}[h]
     \centering
     \begin{tabular}{c|c|c|c|c}
@@ -98,9 +91,46 @@ This lays the groundwork for revealing hidden knowledge in the data, enabling mo
         Paper Products Industry & 47 & 42 & 0 & 5 \\
         Electricity, Heat Industry & 384 & 274 & 18 & 92 \\
     \end{tabular}
-    \caption{Snippet of the Multi-Industries Clustering Results based on the $SO_2$ Emission \cite{LIU-BDE}}
+    \caption{Snippet of the Multi-Industries Clustering Results based on the $SO_2$ Emission \cite{LIU-BDE};
+    Each Industry Sector is represented by a Row, the Columns represent the Clusters showing the Number of Companies in each Cluster}
     \label{tab:multi_industries_clustering_results_based_on_the_so2_emission}
 \end{table}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/liu_assessmentOfIndustries/liu_environmentalPerformance.jpg}
+    \caption{Multi-Industries Clustering Result based on the $SO_2$ Emission \cite{LIU-BDE};
+    Each Point represents a Company its Color represents the Cluster;
+    X-Axis: Fuel-Coal Consumption Index, Y-Axis: $SO_2$ Emissions in $10^4$ Tons}
+    \label{fig:multi_industries_clustering_result_environemental_performance}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/malatesta_hsop/malatesta_routinisedHousehold.jpg}
+    \caption{Single Household Clustering Resulting in a Routinised Household Using all Year Energy Data \cite{MAL-HBP};
+    The Red Line represents the Average Consumption in the Cluster, each Black Line represents an assigned Daily Profile;
+    X-Axis: Time in 1 Hour Intervals, Y-Axis: Normalized Load Consumption}
+    \label{fig:routinized_household}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/malatesta_hsop/malatesta_unroutinisedHousehold.jpg}
+    \caption{Single Household Clustering Resulting in a Unroutinised Household Using all Year Energy Data \cite{MAL-HBP};
+    The Red Line represents the Average Consumption in the Cluster, each Black Line represents an assigned Daily Profile;
+    X-Axis: Time in 1 Hour Intervals, Y-Axis: Normalized Load Consumptio}
+    \label{fig:non_routinized_household}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/malatesta_hsop/malatesta_totalDataAveraging.jpg}
+    \caption{Result after taking the Average Load Consumption of the Total Dataset \cite{MAL-HBP};
+    X-Axis: Time of the Day in Hours, Y-Axis: Normalized Energy Consumption;
+    Most Energy Consumption Profiles show a Dual Peak Model with a Dip Midday, the Dominant HSOP}
+    \label{fig:total_data_averaging}
+\end{figure}
 
 % \paragraph*{MAL-HBP:}
 % % Wie soll dieser Paragraph strukturiert sein?
@@ -123,26 +153,6 @@ This lays the groundwork for revealing hidden knowledge in the data, enabling mo
 %     \item If occupants are routinized, their behaviors are repetitive \cite{BRE-EWP}.
 % \end{itemize}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/malatesta_hsop/malatesta_routinisedHousehold.jpg}
-    \caption{K-Means resulting in a Routinised Household Using all Year Energy Data \cite{MAL-HBP}}
-    \label{fig:routinized_household}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/malatesta_hsop/malatesta_unroutinisedHousehold.jpg}
-    \caption{K-Means resulting in an Unroutinised Household Using all Year Energy Data \cite{MAL-HBP}}
-    \label{fig:non_routinized_household}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{figures/malatesta_hsop/malatesta_totalDataAveraging.jpg}
-    \caption{Total Data Averaging \cite{MAL-HBP}}
-    \label{fig:total_data_averaging}
-\end{figure}
 
 % \paragraph*{What do both Summaries have in Common?}
 % \begin{itemize}
