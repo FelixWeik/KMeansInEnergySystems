@@ -41,25 +41,21 @@ This means, that a single partition of the initial dataset is produced with each
 Clusters are produced heuristically while optimizing a criterion function defined globally on all data objects or locally on the subset of the data objects \cite{ZHU-EPC}.
 
 \subsection{Mathematical Concepts}
-As mentioned before, k-means divides a set of n data points from z dimensions into k clusters.
-This is done by minimizing the sum of squared distances between a datapoint and its assigned cluster center within the whole cluster \cite{HAR-KMA}.
+K-Means clustering utilizes the concept of minimizing the sum of squared distances between a datapoint and its assigned cluster center within the whole cluster \cite{HAR-KMA}
 Doing this globally exists, yet it is computationally expensive \cite{LIS-GKC}.
-Therefore, the algorithm seeks local optima, such that no point can be assigned to a different cluster and the result converges \cite{SEL-GCT}, \cite{HAR-KMA}.
+Therefore, the algorithm seeks local optima, such that no point can be assigned to a different cluster and the result converges \cite{SEL-GCT}.
+An execution of the general algorithm is shown in \autoref{subsec:general_algorithm}.
 
-The initial cluster centers are predefined as explained in \autoref{subsec:initialisation_methods}.
-Next, the means of the initial clusters are calculated.
-Then, each data point is assigned to the cluster with the closest mean.
-These steps are repeated until the cluster centers do not change anymore or the square sum of errors stays the same for multiple iterations \cite{HAR-KMA}.
-
-\paragraph*{Initialisation Methods:}
+\subsection{Initialisation Methods}
 \label{subsec:initialisation_methods}
-The purpose of the initialization methods is to find the initial cluster centers.
+Initialization methods are used to find the initial cluster centers.
 There are multiple methods to do so, for example, \texttt{RANDOM} \cite{PEN-ECI}, the \texttt{Forgy Approach} \cite{AND-CAA}, the \texttt{Macqueen Approach} \cite{MCQ-MCA}, and the \texttt{Kaufman Approach} \cite{KAU-FGD}.
 
 The \texttt{RANDOM} approach is the most commonly used method due to its simplicity while still being an effective initialization method in terms of convergence speed and robustness \cite{PEN-ECI}.
 Therefore it is assumed to be the default initialization method in this thesis.
 
-\paragraph*{General Algorithm:}
+\subsection{General Algorithm}
+\label{subsec:general_algorithm}
 K-means can be implemented in multiple variants.
 The most general implementation using the Euclidean distance is shown in the following.
 \begin{enumerate}
