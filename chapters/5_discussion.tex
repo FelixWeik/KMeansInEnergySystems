@@ -48,19 +48,31 @@ From the research alone it is not possible to conclude that the k-means algorith
 % Grundlegende Idee: Auf Limitations und Findings die Stärken und Schwächen von K-Means ausformulieren
 \begin{description}
     \item[Strengths:]
-    \begin{itemize}
-        \item Simple and easy to implement and use since a wide range of libraries and tools are available (for example scikit-learn in Python)
-        \item Effective in spotting general trends
-        \item Converges every time
-        \item Linear runtime of $O(n * K * I)$ with $n$ being the number of data points, $k$ being the number of clusters, $i$ being the number of iterations.
-    \end{itemize}
+    K-means is simple and easy to use on datasets.
+    A lot of libraries and data analysis tools support the usage of k-means, for example, the r software environment.
+    Jessen et al. \cite{JES-IND} showed that k-means is an effective tool for spotting general trends in large datasets.
+    This also shows that k-means can easily be applied to large datasets like several thousand companies' environmental performance data in Liu et al. \cite{LIU-BDE}.
+    With its linear runtime of $O(n * K * I)$ ($n$ being the number of data points, $k$ being the number of clusters, $i$ being the number of iterations), k-means is also fast in runtime.
+    Finally, the algorithm converges every time, so a result without endless loops is guaranteed \cite{SEL-GCT}.
+    % \begin{itemize}
+    %     \item Simple and easy to implement and use since a wide range of libraries and tools are available (for example scikit-learn in Python)
+    %     \item Effective in spotting general trends
+    %     \item Converges every time
+    %     \item Linear runtime of $O(n * K * I)$ with $n$ being the number of data points, $k$ being the number of clusters, $i$ being the number of iterations.
+    % \end{itemize}
     \item[Weaknesses:]
-    \begin{itemize}
-        \item Failed to spot single outliers in the data
-        \item Tideous initialization process until actual execution takes place
-        \item Converges to local instead of global optima => needs to be executed multiple times
-        \item Despite the algorithm being fast in runtime, running it multiple times and initializing/evaluating the results takes time
-    \end{itemize}
+    Jessen et al. \cite{JES-IND} showed that k-means sometimes failed to spot single outliers in the dataset.
+    Outliers could only be spotted if they followed a general trend or if the dataset had multiple outliers in the same region that could be assigned to a single cluster.
+    Since the algorithm converges to local optima, it has to be executed multiple times to ensure the correctness of the results.
+    Furthermore, the initialization process is tedious since the number of clusters has to be provided before the algorithm can be executed:
+    After finding the optimal number of clusters for the given problem, the initial cluster centers have to be found before being able to execute the algorithm on the given dataset.
+    This makes the fast-executing algorithm slow in practice.
+    % \begin{itemize}
+    %     \item Failed to spot single outliers in the data
+    %     \item Tideous initialization process until actual execution takes place
+    %     \item Converges to local instead of global optima => needs to be executed multiple times
+    %     \item Despite the algorithm being fast in runtime, running it multiple times and initializing/evaluating the results takes time
+    % \end{itemize}
 \end{description}
 \subsection{Comparison of Clustering Methods}
 \begin{itemize}
@@ -82,4 +94,8 @@ From the research alone it is not possible to conclude that the k-means algorith
 \end{itemize}
 
 \section{Outlook}
+\begin{itemize}
+    \item Rerun the clustering algorithm for the same data with different values of k (maybe this helps spotting outliers)
+    \item Check how local optima affect the clustering results (rerun with different initializations)
+\end{itemize}
 % Was kann in Zukunft besser gemacht werden?
