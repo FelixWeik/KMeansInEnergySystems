@@ -14,35 +14,7 @@
 % A case study with larger shares of renewable energy resources in the energy and capacity mix is recommended to investigate the impacts of natural disasters on the renewable-based electricity system [LIU-BDE]
 
 \section{Discussion}
-\subsection{Limitations of the Thesis}
-% Wie kann man die Limitations der Paper und der Findings auf die zu beantwortenden Research Questions und die Motivation anwenden?
-% Also welche Aspekte der Research Question weißen Lücken auf oder wurden unzureichend behandelt?
-The original motivation was to find and tackle the root causes of climate change in the energy sector by focusing on two factors: analyzing energy load profiles and energy-saving incentives.
-The shown papers answered the given research questions to a certain extent.
-However, some points were not fully addressed.
-
-First, the papers were biased towards their choice of energy sources.
-Lombok's energy load profiles portrayed by Jessen et al. \cite{JES-IND} stem mostly from fossil fuels.
-The living lab in Blackwater, Australia, is powered sustainably by solar and using heat pumps \cite{MAL-HBP}.
-Also, each paper focused on a single region with its unique cultural and environmental conditions.
-Therefore the findings cannot be generalized or applied to other regions.
-This concludes that the design of energy incentives cannot be applied universally by this research alone.
-More research and test data using different energy sources and portraying different regions and environmental conditions are needed to fully prove the k-mean's effectiveness in designing energy-saving incentives. 
-
-Additionally, it is not communicated to what extent the COVID-19 pandemic affected the research results.
-Malatesta et al. \cite{MAL-HBP} found unroutinised patterns due to people working from home, which most likely is a result of the pandemic and people being forced to stay and work from home, adapting to this new situation.
-This can distort the results and make them less applicable to normal conditions.
-The pandemic also affects the total energy load profiles, which can lead to false clustering results.
-Jessen et al. \cite{JES-IND} detected an increasing energy consumption over the years, especially in 2020 and 2021 but did not check whether these results stem from the pandemic or other factors.
-Therefore, the results are not fully reliable and need to be re-evaluated under normal conditions.
-
-Finally, the papers did not prove the correctness of the k-means algorithm's results.
-Since the algorithm converges towards local optima, the results are not guaranteed to be the best possible solution.
-Therefore, multiple executions are necessary to ensure the correctness of the results.
-However, none of the papers performed multiple executions.
-This can lead to result manipulation since an incorrect result can prove a wrong hypothesis despite the correct one being present.
-From the research alone it is not possible to conclude that the k-means algorithm is the optimal choice for designing energy-saving incentives and understanding load patterns in general.
-
+%//TODO: Vergleich in den Strengths einbauen
 
 \subsection{Strengths and Limitations of K-Means}
 % Grundlegende Idee: Auf Limitations und Findings die Stärken und Schwächen von K-Means ausformulieren
@@ -73,6 +45,8 @@ From the research alone it is not possible to conclude that the k-means algorith
     %     \item Converges to local instead of global optima => needs to be executed multiple times
     %     \item Despite the algorithm being fast in runtime, running it multiple times and initializing/evaluating the results takes time
     % \end{itemize}
+    %//TODO weniger yet
+    %//TODO captions der bilder sollen nicht achsen beschreiben, sondern information first, da kann ruhig auch ein haufen stehen
 \end{description}
 \subsection{Comparison of Clustering Methods}
 \begin{itemize}
@@ -93,9 +67,44 @@ From the research alone it is not possible to conclude that the k-means algorith
     \item TICC
 \end{itemize}
 
+\subsection{Limitations of the Thesis}
+% Wie kann man die Limitations der Paper und der Findings auf die zu beantwortenden Research Questions und die Motivation anwenden?
+% Also welche Aspekte der Research Question weißen Lücken auf oder wurden unzureichend behandelt?
+The original motivation was to find and tackle the root causes of climate change in the energy sector by focusing on two factors: analyzing energy load profiles and energy-saving incentives.
+The shown papers answered the given research questions to a certain extent.
+However, some points were not fully addressed.
+
+First, the papers were biased towards their choice of energy sources.
+Lombok's energy load profiles portrayed by Jessen et al. \cite{JES-IND} stem mostly from fossil fuels.
+The living lab in Blackwater, Australia, is powered sustainably by solar and using heat pumps \cite{MAL-HBP}.
+Also, each paper focused on a single region with its unique cultural and environmental conditions.
+Therefore the findings cannot be generalized or applied to other regions.
+This concludes that the design of energy incentives cannot be applied universally by this research alone.
+More research and test data using different energy sources and portraying different regions and environmental conditions are needed to fully prove the k-mean's effectiveness in designing energy-saving incentives. 
+
+Additionally, it is not communicated to what extent the COVID-19 pandemic affected the research results.
+Malatesta et al. \cite{MAL-HBP} found unroutinised patterns due to people working from home, which most likely is a result of the pandemic and people being forced to stay and work from home, adapting to this new situation.
+This can distort the results and make them less applicable to normal conditions.
+The pandemic also affects the total energy load profiles, which can lead to false clustering results.
+Jessen et al. \cite{JES-IND} detected an increasing energy consumption over the years, especially in 2020 and 2021 but did not check whether these results stem from the pandemic or other factors.
+Therefore, the results are not fully reliable and need to be re-evaluated under normal conditions.
+
+Finally, the papers did not prove the correctness of the k-means algorithm's results.
+Since the algorithm converges towards local optima, the results are not guaranteed to be the best possible solution.
+Therefore, multiple executions are necessary to ensure the correctness of the results.
+However, none of the papers performed multiple executions.
+This can lead to result manipulation since an incorrect result can prove a wrong hypothesis despite the correct one being present.
+From the research alone it is not possible to conclude that the k-means algorithm is the optimal choice for designing energy-saving incentives and understanding load patterns in general.
+
+
 \section{Outlook}
 \begin{itemize}
     \item Rerun the clustering algorithm for the same data with different values of k (maybe this helps spotting outliers)
     \item Check how local optima affect the clustering results (rerun with different initializations)
 \end{itemize}
 % Was kann in Zukunft besser gemacht werden?
+%//TODO Connect to the limitations
+%//TODO What can people do in the future 
+%//TODO Auf climate change eingehen
+
+%//TODO Save some space => template change if page limitations are exceeded
