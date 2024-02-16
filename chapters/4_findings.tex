@@ -90,10 +90,10 @@ Each paragraph shows the findings of the respective sector.
 Applying k-means with a fixed value of $k=3$, the datasets are separated into low-, mid-, and highly-efficient industry sectors or companies within these sectors.
 Therefore, general patterns are detected and compared.
 Spotting these general characteristics' thresholds and characteristic metrics are determined.
-A clustering example of the environmental impact measured on $SO_2$ emissions is shown in Figure \ref{fig:multi_industries_clustering_result_environemental_performance}.
+A clustering example of the environmental impact measured on $SO_2$ emissions is shown in Table \ref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
 General high-consuming, low-efficient industry sectors are spotted, in this case for example the black metal smelting industry as shown in \ref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
 Most clusters are represented in one cluster yet some are scattered over several clusters.
-\ref{tab:multi_industries_clustering_results_based_on_the_so2_emission} shows the electric power and heat supply industry as a fitting example.
+Table \ref{tab:multi_industries_clustering_results_based_on_the_so2_emission} shows the electric power and heat supply industry as a fitting example.
 Mostly this is due to a few companies of the reviewed industry sector being less efficient.
 This helps in identifying outliers, which means less efficient sectors and companies.
 Therefore, applying k-means to the given dataset helps in finding a starting point in industry sectors and distinct companies for designing energy-saving incentives.
@@ -136,6 +136,9 @@ These assumptions can be made due to k-means laying the groundwork for applying 
 The \texttt{dual peak model} with dip midday is the average consumption habit of the monitored precinct.
 Analyzing the clustering on the whole dataset gave insights into how habits are shared between different households.
 Dominant HSOPs are identified with general characteristics being found.
+Clustering the whole dataset resulted in 8 clusters, with each cluster representing a different HSOP.
+The results are shown in Figure \ref{fig:clustering_whole_dataset}.
+These clusters highlight the typical daily energy consumption profiles of the precinct as a whole.
 Clustering single household data gave insights into how flexibility and routine affect different energy consumption practices.
 The results varied between two (Figure \ref{fig:routinized_household}) up to nine (Figure \ref{fig:non_routinized_household}) clusters per household.
 Due to the application of social theories and surveying the residents, two assumptions are made:
@@ -147,29 +150,60 @@ Therefore, applying k-means to this data reveals the hidden knowledge of HSOPs a
 
 \begin{figure}
     \centering
+    \includegraphics[width=0.6\textwidth]{figures/malatesta_hsop/malatesta_totalDataAveraging.jpg}
+    \caption{This graph shows the average daily energy profile from all monitored homes.
+    This provides a baseline for individual home comparison.
+    It demonstrates the general consumption pattern for the households.
+    A dual peak model with a dip midday is the average consumption habit.
+    This reveals the dominant routines and possible rhythms the occupants follow.
+    Also, this shows that routines and behavioral patterns can be shared among different households. 
+    }
+    \label{fig:total_data_averaging}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/malatesta_hsop/malatesta_clusteringWholeDataset.png}
+    \caption{These clusters are the result of clustering the whole dataset of monitored households.
+    Each cluster represents a dominant HSOP, with the red line representing the average consumption in the cluster and the black lines the assigned daily profiles.
+    This depicts a more granular view of the dominant routines and habits compared to the average daily energy profile.
+    However, more than half of the profiles show a similar dual peak pattern with a dip midday.
+    Also, seasonal patterns are visible, with cluster 7 being a summer pattern with increased energy consumption during midday and cluster 2 being a winter pattern with increased energy consumption in the morning and evening.
+    This shows that k-means can identify dominant HSOPs by the given data that can be used as input for higher-level social theory models that could not have been used without the k-means results.
+    }
+    \label{fig:clustering_whole_dataset}
+\end{figure}
+
+\begin{figure}
+    \centering
     \includegraphics[width=0.6\textwidth]{figures/malatesta_hsop/malatesta_routinisedHousehold.jpg}
-    \caption{Single Household Clustering Resulting in a Routinised Household Using all Year Energy Data \cite{MAL-HBP};
-    The Red Line represents the Average Consumption in the Cluster, each Black Line represents an assigned Daily Profile;
-    X-Axis: Time in 1 Hour Intervals, Y-Axis: Normalized Load Consumption}
+    \caption{Two extremes occurred in the clustering of single household data.
+    This extreme shows a very routinized household with only two clusters.
+    The left profile shows a broad peak during the day, it occurred mostly on weekends.
+    The right profile shows a dual peak pattern with a dip midday, occurring mostly on weekdays.
+    Results of the survey show that the occupants are less flexible due to their work commitments and family structures.
+    This shows that repetitive structures in the daily routines of the occupants are visible in the energy consumption.
+    Also, k-means can spot these repetitive structures in the data which can be used complementary to the survey results.
+    }
     \label{fig:routinized_household}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{figures/malatesta_hsop/malatesta_unroutinisedHousehold.jpg}
-    \caption{Single Household Clustering Resulting in a Unroutinised Household Using all Year Energy Data \cite{MAL-HBP};
-    The Red Line represents the Average Consumption in the Cluster, each Black Line represents an assigned Daily Profile;
-    X-Axis: Time in 1 Hour Intervals, Y-Axis: Normalized Load Consumptio}
+    \caption{This graph shows the other extreme with nine clusters.
+    This household therefore is less routinized than the previous one.
+    The time in which the peak occurs differs between all of the nine clusters.
+    They also differ in their shape and magnitude.
+    These patterns can be explained by the results of the survey, with the residents being two adults between 40-59 years of age and a third person between 18-24 years of age.
+    One of the adults is working from home, the other is working away.
+    The third person is a student studying from home.
+    Since studying and working from home is not observed with typical work patterns, the energy consumption is more flexible explaining the different times of the peaks.
+    This shows that changes in behaviors most likely result in a change in energy consumption.
+    }
     \label{fig:non_routinized_household}
 \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/malatesta_hsop/malatesta_totalDataAveraging.jpg}
-    \caption{Result after taking the Average Load Consumption of the Total Dataset \cite{MAL-HBP};
-    X-Axis: Time of the Day in Hours, Y-Axis: Normalized Energy Consumption;
-    Most Energy Consumption Profiles show a Dual Peak Model with a Dip Midday, the Dominant HSOP}
-    \label{fig:total_data_averaging}
-\end{figure}
+
 
 
