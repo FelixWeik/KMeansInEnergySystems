@@ -40,26 +40,43 @@ This lays the groundwork for revealing hidden knowledge in the data, enabling mo
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{figures/jessen_ndImpactedClusters/jessen_wholeDataClustering.png}
-    \caption{Whole Data Clustering Results \cite{JES-IND};
-    Y-Axis: Power Consumption in MW, X-Axis: Time in 30 Minute Intervals;
-    Each Cluster is represented by a different color}
+    \caption{These are the results of executing the k-means algorithm on the whole electricity load profile dataset of Lombok, Indonesia.
+    The ideal number of clusters is proven to be $7$.
+    Each cluster is represented by a different color.
+    Each cluster approximately contains the electricity load profiles of one year.
+    It is visible that the power consumption increased over the years since the clusters for the later years are more consuming than the clusters starting from 2015.
+    Also, special events like the Ramadhan period are identified, here in the lime cluster.
+    }
     \label{fig:whole_data_clustering_results}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{figures/jessen_ndImpactedClusters/jessen_Clustering2018.png}
-    \caption{Clustering Results for the Earthquake-Impacted Year of 2018 \cite{JES-IND};
-    Y-Axis: Power Consumption in MW, X-Axis: Time in 30 Minute Intervals;
-    Each Cluster is represented by a different color}
+    \caption{This is the result of the k-means algorithm applied to the earthquake-impacted year of 2018.
+    Again, the ideal number of clusters is proven to be $7$ with each cluster being represented by a different color.
+    The clusters are divided into different consumption patterns showing different, non-earthquake-impacted consumption patterns.
+    These patterns differ over the year.
+    The black cluster contains mid to low-consumption months, mainly from January and February.
+    Also, holiday periods like the Ramadhan are identified, here in the gold cluster.
+    The algorithm identified the post-earthquake recovery period in the red cluster.
+    Also, the dodger blue cluster contains natural disaster-impacted data.
+    Both clusters are labeled as "abnormal".
+    Therefore, the algorithm successfully identified the earthquake-impacted data from the dataset of an earthquake-impacted year.
+    }
     \label{fig:clustering_results_2018}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{figures/jessen_ndImpactedClusters/jessen_ClusterTwo2018.png}
-    \caption{The Load Profiles in Cluster 2 (16 Samples in total) for Lombok in 2018 \cite{JES-IND};
-    The Red Solid Lines represent the Clusters' Daily Profiles, the Red dashed Line is the Average for the Red Cluster, and the thick Orange dashed Line is the daily Average for the whole 2018}
+    \caption{This figure takes a closer look at the red cluster of the earthquake-impacted year of 2018.
+    The Red Solid Lines represent the Clusters' Daily Profiles, the Red dashed Line is the Average for the Red Cluster, and the thick Orange dashed Line is the daily Average for the whole 2018
+    It is detectable, that the identified profiles are far from the average daily load profile of the whole year.
+    The severe electricity consumption reductions happened as a result of a 7.0 Richter Scale earthquake on the northern part of Lombok on 5 August 2018.
+    During the earthquake, the electricity load reduced by 78\% compared to the pre-earthquake consumption.
+    The electricity system did not fully recover within a 10-day range.
+    }
     \label{fig:clustering_results_2018_cluster_two}
 \end{figure}
 
