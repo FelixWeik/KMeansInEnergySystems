@@ -1,4 +1,4 @@
-\chapter{Findings}
+\section{Findings}
 \label{cha:findings}
 % Grading Criteria
 % - Steps taken to arrive at the presented findings are clear 
@@ -17,7 +17,7 @@ By choosing a fixed value the clustering results apply to criteria chosen in adv
 Liu et al \cite{LIU-BDE} choose a fixed value of $k=3$ since the clustering results are divided into low-, medium-, and high-consumption clusters.
 By applying k-means with a variable value of $k$ the clustering results adapt to the data and therefore deliver problem-specific results.
 This enables Jessen et al. \cite{JES-IND} to spot trends in the data without knowing about certain characteristics in advance.
-The clustering results of the whole energy-load profile dataset of Lombok, Indonesia, are shown in \autoref{fig:whole_data_clustering_results}.
+The clustering results of the whole energy-load profile dataset of Lombok, Indonesia, are shown in \ref{fig:whole_data_clustering_results}.
 Each cluster holds approximately the data of a single year, for example, the black cluster contains data from 2015 and the red cluster contains mostly data from 2021.
 This shows an overall increase in power consumption over the years.
 The algorithm also managed to spot different consumption patterns in the data, with the lime cluster containing mostly the Ramadhan periods from 2018 to 2021.
@@ -27,9 +27,9 @@ This classification can take place by taking further datasets into account that 
 Jessen et al. \cite{JES-IND} algorithmically label the clustering results into "normal" and "abnormal" clusters, with the abnormal clusters being natural disasters or electrical fault impacted.
 This is done by comparing the clustering results with the occurrence time and epicenter of natural disasters and electrical faults.
 By reapplying the clustering algorithm to the distinct clusters, the labeling process can be proven.
-The clustering results for the earthquake-impacted year 2018 are shown in \autoref{fig:clustering_results_2018}.
+The clustering results for the earthquake-impacted year 2018 are shown in \ref{fig:clustering_results_2018}.
 Again, the algorithm divided the data into distinct clusters, with each cluster representing different consumption patterns.
-The red cluster contains post-natural disaster data, which is analyzed in greater detail in \autoref{fig:clustering_results_2018_cluster_two}.
+The red cluster contains post-natural disaster data, which is analyzed in greater detail in \ref{fig:clustering_results_2018_cluster_two}.
 
 These findings show, that k-means proves useful in understanding electricity load pattern datasets without prior knowledge.
 By applying k-means, characteristics, patterns, and tendencies are spotted within the data.
@@ -37,7 +37,7 @@ The clustering results can be adjusted by choosing different values for $k$.
 If a certain theory or defined categories want to be proven a fixed value is useful, to generate hidden knowledge out of large datasets a variable value is more useful.
 This lays the groundwork for revealing hidden knowledge in the data, enabling more advanced methods to fully grasp the data's meaning.
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{figures/jessen_ndImpactedClusters/jessen_wholeDataClustering.png}
     \caption{Whole Data Clustering Results \cite{JES-IND};
@@ -46,7 +46,7 @@ This lays the groundwork for revealing hidden knowledge in the data, enabling mo
     \label{fig:whole_data_clustering_results}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{figures/jessen_ndImpactedClusters/jessen_Clustering2018.png}
     \caption{Clustering Results for the Earthquake-Impacted Year of 2018 \cite{JES-IND};
@@ -73,10 +73,10 @@ This lays the groundwork for revealing hidden knowledge in the data, enabling mo
 % The results are separated into four parts: Clustering for freshwater consumption, the environmental performance measured on the sulfur dioxide emissions, and the energy efficiency performance measured on the coal consumption.
 % The k-means algorithm is applied multiple times for each part: once for the whole dataset containing all industry sectors and for each industry sector separately.
 % Therefore, distinct companies can be assigned to a cluster and be compared with other companies from the same or different industry sectors.
-% One of the clustering algorithm's results is shown in \autoref{fig:multi_industries_clustering_result_environemental_performance}.
+% One of the clustering algorithm's results is shown in \ref{fig:multi_industries_clustering_result_environemental_performance}.
 % A certain threshold most companies remain below can be determined.
 % Furthermore, the number of companies in each cluster can be counted and compared.
-% The results of the assignments for each industry sector according to the environmental performance are shown in \autoref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
+% The results of the assignments for each industry sector according to the environmental performance are shown in \ref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
 % Some industry sectors show a clear tendency towards a specific cluster, while others are less evenly distributed.
 % Therefore, general cluster structures can be identified with industry sectors being ranked by the chosen metric.
 % Also, companies within industry sectors can be compared, which helps detect outliers and best practices.
@@ -143,12 +143,12 @@ This lays the groundwork for revealing hidden knowledge in the data, enabling mo
 
 % After clustering the whole dataset several assumptions are made.
 % First, dominant routines are spotted by averaging the total dataset.
-% This leads to a dual peak average as shown in \autoref{fig:total_data_averaging}.
+% This leads to a dual peak average as shown in \ref{fig:total_data_averaging}.
 % Therefore, practices can be socially shared.
 % Also, different consumption practices for the summer and winter seasons are found.
 
 % After applying k-means to each household, routinized households and less routinized households can be identified.
-% Routinized households (\autoref{fig:routinized_household}) show a smaller number of clusters and therefore less HSOPs than less routinized households (\autoref{fig:non_routinized_household}).
+% Routinized households (\ref{fig:routinized_household}) show a smaller number of clusters and therefore less HSOPs than less routinized households (\ref{fig:non_routinized_household}).
 % Due to the application of social theories and the survey, two assumptions can be made:
 % \begin{itemize}
 %     \item Variable lifestyles with different work commitments (e.g. working from home) or family structures (e.g. having children) alter the energy consumption of households \cite{KUR-HBP}.
@@ -183,24 +183,24 @@ This lays the groundwork for revealing hidden knowledge in the data, enabling mo
 Applying k-means with a fixed value of $k=3$, the datasets are separated into low-, mid-, and highly-efficient industry sectors or companies within these sectors.
 Therefore, general patterns are detected and compared.
 Spotting these general characteristics' thresholds and characteristic metrics are determined.
-A clustering example of the environmental impact measured on $SO_2$ emissions is shown in \autoref{fig:multi_industries_clustering_result_environemental_performance}.
-General high-consuming, low-efficient industry sectors are spotted, in this case for example the black metal smelting industry as shown in \autoref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
+A clustering example of the environmental impact measured on $SO_2$ emissions is shown in \ref{fig:multi_industries_clustering_result_environemental_performance}.
+General high-consuming, low-efficient industry sectors are spotted, in this case for example the black metal smelting industry as shown in \ref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
 Most clusters are represented in one cluster yet some are scattered over several clusters.
-\autoref{tab:multi_industries_clustering_results_based_on_the_so2_emission} shows the electric power and heat supply industry as a fitting example.
+\ref{tab:multi_industries_clustering_results_based_on_the_so2_emission} shows the electric power and heat supply industry as a fitting example.
 Mostly this is due to a few companies of the reviewed industry sector being less efficient.
 This helps in identifying outliers, which means less efficient sectors and companies.
 Therefore, applying k-means to the given dataset helps in finding a starting point in industry sectors and distinct companies for putting energy-saving incentives into action.
 
 \paragraph*{Private Housing:}
 Again, patterns are detected using k-means, yet in a different context with different interpretations.
-Averaging the whole dataset (\autoref{fig:total_data_averaging}) provided insights into dominant practices and habits that are socially shared among the residents of the precinct.
+Averaging the whole dataset (\ref{fig:total_data_averaging}) provided insights into dominant practices and habits that are socially shared among the residents of the precinct.
 Also, HSOPs are different for the summer and winter seasons due to heating and cooling practices.
 These assumptions can be made due to k-means laying the groundwork for applying social theory and the survey results after the clustering process.
 The \texttt{dual peak model} with dip midday is the average consumption habit of the monitored precinct.
 Analyzing the clustering on the whole dataset gave insights into how habits are shared between different households.
 Dominant HSOPs are identified with general characteristics being found.
 Clustering single household data gave insights into how flexibility and routine affect different energy consumption practices.
-The results varied between two (\autoref{fig:routinized_household}) up to nine (\autoref{fig:non_routinized_household}) clusters per household.
+The results varied between two (\ref{fig:routinized_household}) up to nine (\ref{fig:non_routinized_household}) clusters per household.
 Due to the application of social theories and surveying the residents, two assumptions are made:
 \begin{itemize}
     \item Variable lifestyles with different work commitments (e.g. working from home) or family structures (e.g. having children) alter the energy consumption of households \cite{KUR-HBP}.
