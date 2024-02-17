@@ -17,13 +17,16 @@ Conducting the literature review provided two different options for choosing the
 By choosing a fixed value the clustering results apply to criteria chosen in advance.
 Liu et al \cite{LIU-BDE} choose a fixed value of $k=3$ since the clustering results are divided into low-, medium-, and high-consumption clusters.
 By applying k-means with a variable value of $k$ the clustering results adapt to the data and therefore deliver problem-specific results.
+Variable in this context means, that the value of $k$ is chosen problem-specific by using the elbow method.
 This enables Jessen et al. \cite{JES-IND} to spot trends in the data without knowing about certain characteristics in advance.
-The clustering results of the whole energy-load profile dataset of Lombok, Indonesia, are shown in Figure \ref{fig:whole_data_clustering_results}.
+
+Clustering the whole datasets of energy-load patterns in Lombok, Indonesia, resulted in Figure \ref{fig:whole_data_clustering_results}.
 Each cluster holds approximately the data of a single year, for example, the black cluster contains data from 2015 and the red cluster contains mostly data from 2021.
 This shows an overall increase in power consumption over the years.
 The algorithm also managed to spot different consumption patterns in the data, with the lime cluster containing mostly the Ramadhan periods from 2018 to 2021.
 
 To further improve the overall understanding of the data, further theories and classifications can be applied after executing k-means.
+The clustering results then fungate as input for higher-level models and theories.
 This classification can take place by taking further datasets into account that underline the found characteristics and patterns.
 Jessen et al. \cite{JES-IND} algorithmically label the clustering results into "normal" and "abnormal" clusters, with the abnormal clusters being natural disasters or electrical fault impacted.
 This is done by comparing the clustering results with the occurrence time and epicenter of natural disasters and electrical faults.
@@ -81,23 +84,25 @@ This lays the groundwork for revealing hidden knowledge in the data, enabling mo
     \label{fig:clustering_results_2018_cluster_two}
 \end{figure}
 
-\newpage
-
 \section{Improving the Design of Energy-Saving Incentives}
 \label{sec:improving_the_design_of_energy_saving_incentives}
 The k-means algorithm is used in two different contexts, namely the industry and private housing sectors.
 Each paragraph shows the findings of the respective sector.
-\paragraph*{Industry:}
+\subsection{Industry}
 Applying k-means with a fixed value of $k=3$, the datasets are separated into low-, mid-, and highly-efficient industry sectors or companies within these sectors.
 Therefore, general patterns are detected and compared.
 Spotting these general characteristics' thresholds and characteristic metrics are determined.
+
 A clustering example of the environmental impact measured on $SO_2$ emissions is shown in Table \ref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
-General high-consuming, low-efficient industry sectors are spotted, in this case for example the black metal smelting industry as shown in \ref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
+General high-consuming, low-efficient industry sectors are spotted, in this case for example the black metal smelting industry.
 Most clusters are represented in one cluster, some sectors are scattered over several clusters.
-Table \ref{tab:multi_industries_clustering_results_based_on_the_so2_emission} shows the electric power and heat supply industry as a fitting example.
+The electric power and heat supply industry serves as a fitting example.
 Mostly this is due to a few companies of the reviewed industry sector being less efficient.
-This helps in identifying outliers, which means less efficient sectors and companies.
-Therefore, applying k-means to the given dataset helps in finding a starting point in industry sectors and distinct companies for designing energy-saving incentives.
+
+K-means provides the functionality to compare companies within and between industry sectors.
+This is a starting point for putting energy-saving incentives into action.
+Outliers in sectors can be spotted and addressed.
+Therefore, applying k-means to the given dataset helps in finding a starting point in industry sectors and distinct companies for designing and applying energy-saving incentives.
 
 \begin{table}[h]
     \centering
@@ -129,7 +134,7 @@ Therefore, applying k-means to the given dataset helps in finding a starting poi
     \label{tab:multi_industries_clustering_results_based_on_the_so2_emission}
 \end{table}
 
-\paragraph*{Private Housing:}
+\subsection{Private Housing}
 Again, patterns are detected using k-means in a different context with different interpretations.
 Averaging the whole dataset (Figure \ref{fig:total_data_averaging}) provided insights into dominant practices and habits that are socially shared among the residents of the precinct.
 Also, HSOPs are different for the summer and winter seasons due to heating and cooling practices.
