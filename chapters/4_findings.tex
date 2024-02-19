@@ -1,7 +1,6 @@
 \section{Findings}
 \label{cha:findings}
 
-%//TODO Retry to improve the pictures' resolution
 
 % Grading Criteria
 % - Steps taken to arrive at the presented findings are clear 
@@ -18,14 +17,16 @@ By choosing a fixed value the clustering results apply to criteria chosen in adv
 Liu et al \cite{LIU-BDE} choose a fixed value of $k=3$ since the clustering results are divided into low-, medium-, and high-consumption clusters.
 By applying k-means with a variable value of $k$ the clustering results adapt to the data and therefore deliver problem-specific results.
 Variable in this context means, that the value of $k$ is chosen problem-specific by using the elbow method.
-This enables Jessen et al. \cite{JES-IND} to spot trends in the data without knowing about certain characteristics in advance.
+This enables researchers to spot trends in the data without knowing about certain characteristics in advance.
 
+Jessen et al. \cite{JES-IND} use k-means to analyze and label electricity load profiles of Lombok, Indonesia, as normal or abnormal.
+The value for $k$ is chosen for each dataset specifically by using the elbow method.
 Clustering the whole datasets of energy-load patterns in Lombok, Indonesia, resulted in Figure \ref{fig:whole_data_clustering_results}.
 Each cluster holds approximately the data of a single year, for example, the black cluster contains data from 2015 and the red cluster contains mostly data from 2021.
 This shows an overall increase in power consumption over the years.
 The algorithm also managed to spot different consumption patterns in the data, with the lime cluster containing mostly the Ramadhan periods from 2018 to 2021.
 
-To further improve the overall understanding of the data, further theories and classifications can be applied after executing k-means.
+To improve the overall understanding of the data, further theories and classifications can be applied after executing k-means.
 The clustering results then fungate as input for higher-level models and theories.
 This classification can take place by taking further datasets into account that underline the found characteristics and patterns.
 Jessen et al. \cite{JES-IND} algorithmically label the clustering results into "normal" and "abnormal" clusters, with the abnormal clusters being natural disasters or electrical fault impacted.
@@ -33,6 +34,8 @@ This is done by comparing the clustering results with the occurrence time and ep
 By reapplying the clustering algorithm to the distinct clusters, the labeling process can be proven.
 The clustering results for the earthquake-impacted year 2018 are shown in Figure \ref{fig:clustering_results_2018}.
 Again, the algorithm divided the data into distinct clusters, with each cluster representing different consumption patterns.
+Also, seasonal patterns are identified, since clusters containing mostly mid to low-consumption months like January and February or higher consumption months are spotted.
+In this case, the algorithm managed to identify natural disaster-impacted clusters, as shown in the red cluster.
 The red cluster contains post-natural disaster data, which is analyzed in greater detail in Figure \ref{fig:clustering_results_2018_cluster_two}.
 
 These findings show, that k-means proves useful in understanding electricity load pattern datasets without prior knowledge.
@@ -95,9 +98,14 @@ Spotting these general characteristics' thresholds and characteristic metrics ar
 
 A clustering example of the environmental impact measured on $SO_2$ emissions is shown in Table \ref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
 General high-consuming, low-efficient industry sectors are spotted, in this case for example the black metal smelting industry.
-Most clusters are represented in one cluster, some sectors are scattered over several clusters.
-The electric power and heat supply industry serves as a fitting example.
-Mostly this is due to a few companies of the reviewed industry sector being less efficient.
+Most industry sectors remain in one cluster, a good example is the textile or rubber/plastic products industry.
+Some industry sectors are represented in several clusters with a clear tendency towards one cluster, for example, the black metal smelting industry or the electricity and heat industry.
+This can imply, that some companies within the industry sector are less efficient than others.
+It therefore is possible for these companies not to be spotted as outliers.
+The last pattern is a clear preference for a certain cluster with a few companies being represented in another cluster, for example, the paper products industry.
+These companies can be spotted as outliers.
+This shows, that k-means can be used to identify general cluster structures and to compare companies within industry sectors.
+The detection, therefore, is a starting point for putting energy-saving incentives into action.
 
 K-means provides the functionality to compare companies within and between industry sectors.
 This is a starting point for putting energy-saving incentives into action.
@@ -122,14 +130,6 @@ Therefore, applying k-means to the given dataset helps in finding a starting poi
     \caption{This table shows a snippet of the clustering results on all industry sectors based on the $SO_2$ emissions.
     Each industry sector is represented by a row, the columns represent the clusters showing the number of companies in each cluster.
     $k$ is fixed at $3$ since the research wants to identify low-, mid-, and high-efficient industry sectors.
-    Most industry sectors remain in one cluster, a good example is the textile or rubber/plastic products industry.
-    Some industry sectors are represented in several clusters with a clear tendency towards one cluster, for example, the black metal smelting industry or the electricity and heat industry.
-    This can imply, that some companies within the industry sector are less efficient than others.
-    It therefore is possible for these companies not to be spotted as outliers.
-    The last pattern is a clear preference for a certain cluster with a few companies being represented in another cluster, for example, the paper products industry.
-    These companies can be spotted as outliers.
-    This shows, that k-means can be used to identify general cluster structures and to compare companies within industry sectors.
-    The detection, therefore, is a starting point for putting energy-saving incentives into action.
     }
     \label{tab:multi_industries_clustering_results_based_on_the_so2_emission}
 \end{table}
@@ -138,27 +138,37 @@ Therefore, applying k-means to the given dataset helps in finding a starting poi
 K-means is used in different contexts with different interpretations.
 Malatesta et al. \cite{MAL-HBP} use k-means to identify home systems of best practices (HSOPs) in private housing.
 
-To get an overview of the general structure of consumption patterns, the average daily energy profile of all monitored households (Figure \ref{fig:total_data_averaging}) is generated by averaging the data of all households.
+To get an overview of the general structure of consumption patterns, the average daily energy profile of all monitored households (Figure \ref{fig:total_data_averaging}) is generated by averaging the total dataset.
 The dual peak model with a dip midday proved to be the dominant HSOP of the living lab.
 This provides a baseline for home comparison in the next steps.
 
 Applying k-means clustering to the whole dataset of monitored households resulted in the clustering results shown in Figure \ref{fig:clustering_whole_dataset}.
 $k=8$ was found to be the optimal number of clusters.
-The results show, that HSOPs can be socially shared between different households.
-Each cluster highlights a typical daily energy consumption profile of the precinct as a whole.
+This depicts a more granular view of the dominant routines and habits compared to the averaged daily energy profile.
+The results show, that HSOPs can be socially shared between different households, revealing dominant routines and rhythms the occupants follow.
+Each cluster highlights a typical HSOP of the precinct as a whole.
 Since each daily pattern is assigned to a cluster, assumptions for weekdays, weekends, holidays and seasons can be made. 
-For example, HSOPs are different for the summer and winter seasons due to heating and cooling practices.
+This reveals that HSOPs are different for the summer and winter seasons due to heating and cooling practices.
+Also, most of the profiles show a similar dual peak pattern as the averaged profile, with peaks changing in daytime, shape and magnitude.
+This shows that k-means can identify dominant HSOPs by the given data that can be used as input for higher-level social theory models that could not have been used without the k-means results.
 
 Clustering each household separately revealed different numbers of clusters per household.
 The clustering results were then complemented by a survey of the residents.
 This gave insights into how different behaviors or more general traits affect the energy consumption of households.
-Two assumptions are made combining both the survey and the clustering results.
-First, lifestyles with different work commitments (e.g. working from home) or family structures (e.g. having children) alter the energy consumption of households \cite{KUR-HBP}.
-A fitting example is Figure \ref{fig:routinized_household}, showing a very routinized household with only two clusters.
-The occupants are less flexible due to working away and having a larger family.
+This shows that lifestyles with different work commitments (e.g. working from home) or family structures (e.g. having children) alter the energy consumption of households \cite{KUR-HBP}.
+Figure \ref{fig:routinized_household} shows a very routinized household with only two clusters.
+The survey of the household's residents shows that the occupants are less flexible due to their work commitments and family structures.
+This shows that repetitive structures in the daily routines of the occupants are visible in the energy consumption.
+Also, k-means can spot these repetitive structures in the data which can be used complementary to the survey results.
+
 More flexible lifestyles like working or studying from home resulted in different peaks of alternating magnitude and shape during the day.
 This results in a higher number of clusters, resulting in a less routinized household with up to nine clusters.
-Figure \ref{fig:non_routinized_household} is a fitting example.
+Figure \ref{fig:non_routinized_household} represents an unroutinized household.
+The varying patterns with different peaks and shapes can be explained by the results of the survey, with the residents being two adults between 40-59 years of age and a third person between 18-24 years of age.
+One of the adults is working from home, the other is working away.
+The third person is a student studying from home.
+Since studying and working from home is not observed with typical work patterns, the energy consumption is more flexible explaining the different times of the peaks.
+This shows that changes in behaviors most likely result in a change in energy consumption.
 This finding is supported by the second result, that if occupants are routinized, their behaviors are repetitive \cite{BRE-EWP}.
 
 K-means proved that repetitive structures in the daily routines of the occupants are visible in the energy consumption.
@@ -172,8 +182,6 @@ This shows that k-means can be successfully applied in this context, and serve a
     This provides a baseline for individual home comparison.
     It demonstrates the general consumption pattern for the households.
     A dual peak model with a dip midday is the average consumption habit.
-    This reveals the dominant routines and possible rhythms the occupants follow.
-    Also, this shows that routines and behavioral patterns can be shared among different households. 
     }
     \label{fig:total_data_averaging}
 \end{figure}
@@ -183,10 +191,8 @@ This shows that k-means can be successfully applied in this context, and serve a
     \includegraphics[width=0.7\textwidth]{figures/malatesta_hsop/malatesta_clusteringWholeDataset.png}
     \caption{These clusters are the result of clustering the whole dataset of monitored households.
     Each cluster represents a dominant HSOP, with the red line representing the average consumption in the cluster and the black lines the assigned daily profiles.
-    This depicts a more granular view of the dominant routines and habits compared to the average daily energy profile.
     However, more than half of the profiles show a similar dual peak pattern with a dip midday.
-    Also, seasonal patterns are visible, with cluster 7 being a summer pattern with increased energy consumption during midday and cluster 2 being a winter pattern with increased energy consumption in the morning and evening.
-    This shows that k-means can identify dominant HSOPs by the given data that can be used as input for higher-level social theory models that could not have been used without the k-means results.
+    Seasonal patterns are visible, with cluster 7 being a summer pattern with increased energy consumption during midday and cluster 2 being a winter pattern with increased energy consumption in the morning and evening.
     }
     \label{fig:clustering_whole_dataset}
 \end{figure}
@@ -194,13 +200,10 @@ This shows that k-means can be successfully applied in this context, and serve a
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{figures/malatesta_hsop/malatesta_routinisedHousehold.jpg}
-    \caption{Two extremes occurred in the clustering of single household data.
-    This extreme shows a very routinized household with only two clusters.
+    \caption{These graphs represent a very routinized household with only two clusters.
     The left profile shows a broad peak during the day, it occurred mostly on weekends.
     The right profile shows a dual peak pattern with a dip midday, occurring mostly on weekdays.
-    Results of the survey show that the occupants are less flexible due to their work commitments and family structures.
-    This shows that repetitive structures in the daily routines of the occupants are visible in the energy consumption.
-    Also, k-means can spot these repetitive structures in the data which can be used complementary to the survey results.
+    These results can be explained by the residents' working commitments and family structures making them less flexible, more repetitive, and therefore routinized.
     }
     \label{fig:routinized_household}
 \end{figure}
@@ -212,11 +215,7 @@ This shows that k-means can be successfully applied in this context, and serve a
     This household is less routinized than the previous one.
     The time in which the peak occurs differs between all of the nine clusters.
     They also differ in their shape and magnitude.
-    These patterns can be explained by the results of the survey, with the residents being two adults between 40-59 years of age and a third person between 18-24 years of age.
-    One of the adults is working from home, the other is working away.
-    The third person is a student studying from home.
-    Since studying and working from home is not observed with typical work patterns, the energy consumption is more flexible explaining the different times of the peaks.
-    This shows that changes in behaviors most likely result in a change in energy consumption.
+    These results can be explained due to the residents working and studying from home making them more flexible and less repetitive in their daily routines.
     }
     \label{fig:non_routinized_household}
 \end{figure}
