@@ -91,28 +91,8 @@ This lays the groundwork for revealing hidden knowledge in the data, enabling mo
 \label{sec:improving_the_design_of_energy_saving_incentives}
 The k-means algorithm is used in two different contexts, namely the industry and private housing sectors.
 Each paragraph shows the findings of the respective sector.
-\subsection{Industry}
-Applying k-means with a fixed value of $k=3$, the datasets are separated into low-, mid-, and highly-efficient industry sectors or companies within these sectors.
-Therefore, general patterns are detected and compared.
-Spotting these general characteristics' thresholds and characteristic metrics are determined.
 
-A clustering example of the environmental impact measured on $SO_2$ emissions is shown in Table \ref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
-General high-consuming, low-efficient industry sectors are spotted, in this case for example the black metal smelting industry.
-Most industry sectors remain in one cluster, a good example is the textile or rubber/plastic products industry.
-Some industry sectors are represented in several clusters with a clear tendency towards one cluster, for example, the black metal smelting industry or the electricity and heat industry.
-This can imply, that some companies within the industry sector are less efficient than others.
-It therefore is possible for these companies not to be spotted as outliers.
-The last pattern is a clear preference for a certain cluster with a few companies being represented in another cluster, for example, the paper products industry.
-These companies can be spotted as outliers.
-This shows, that k-means can be used to identify general cluster structures and to compare companies within industry sectors.
-The detection, therefore, is a starting point for putting energy-saving incentives into action.
-
-K-means provides the functionality to compare companies within and between industry sectors.
-This is a starting point for putting energy-saving incentives into action.
-Outliers in sectors can be spotted and addressed.
-Therefore, applying k-means to the given dataset helps in finding a starting point in industry sectors and distinct companies for designing and applying energy-saving incentives.
-
-\begin{table}[h]
+\begin{table}[H]
     \centering
     \begin{tabular}{|c|c|c|c|c|}
         \hline
@@ -133,6 +113,27 @@ Therefore, applying k-means to the given dataset helps in finding a starting poi
     }
     \label{tab:multi_industries_clustering_results_based_on_the_so2_emission}
 \end{table}
+
+\subsection{Industry}
+Applying k-means with a fixed value of $k=3$, the datasets are separated into low-, mid-, and highly-efficient industry sectors or companies within these sectors.
+Therefore, general patterns are detected and compared.
+Spotting these general characteristics' thresholds and characteristic metrics are determined.
+
+A clustering example of the environmental impact measured on $SO_2$ emissions is shown in Table \ref{tab:multi_industries_clustering_results_based_on_the_so2_emission}.
+General high-consuming, low-efficient industry sectors are spotted, in this case for example the black metal smelting industry.
+Most industry sectors remain in one cluster, a good example is the textile or rubber/plastic products industry.
+Some industry sectors are represented in several clusters with a clear tendency towards one cluster, for example, the black metal smelting industry or the electricity and heat industry.
+This can imply, that some companies within the industry sector are less efficient than others.
+It therefore is possible for these companies not to be spotted as outliers.
+The last pattern is a clear preference for a certain cluster with a few companies being represented in another cluster, for example, the paper products industry.
+These companies can be spotted as outliers.
+This shows, that k-means can be used to identify general cluster structures and to compare companies within industry sectors.
+The detection, therefore, is a starting point for putting energy-saving incentives into action.
+
+K-means provides the functionality to compare companies within and between industry sectors.
+This is a starting point for putting energy-saving incentives into action.
+Outliers in sectors can be spotted and addressed.
+Therefore, applying k-means to the given dataset helps in finding a starting point in industry sectors and distinct companies for designing and applying energy-saving incentives.
 
 \subsection{Private Housing}
 K-means is used in different contexts with different interpretations.
