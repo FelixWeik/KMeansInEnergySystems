@@ -48,11 +48,20 @@ An execution of the general algorithm is shown in \ref{subsec:general_algorithm}
 
 \subsubsection{Initialisation Methods}
 \label{subsec:initialisation_methods}
-Initialization methods are used to find the initial cluster centers.
-There are multiple methods to do so, for example, \texttt{RANDOM} \cite{PEN-ECI}, the \texttt{Forgy Approach} \cite{AND-CAA}, the \texttt{Macqueen Approach} \cite{MCQ-MCA}, and the \texttt{Kaufman Approach} \cite{KAU-FGD}.
+Initialization methods are used to find the initial cluster centers and the initial clustering.
+They provide the first step in the k-means algorithm.
+There are multiple methods to do so, with the most popular approaches being \texttt{RANDOM} \cite{PEN-ECI}, the \texttt{Forgy Approach} \cite{AND-CAA}, the \texttt{Macqueen Approach} \cite{MCQ-MCA}, and the \texttt{Kaufman Approach} \cite{KAU-FGD}.
 
-The \texttt{RANDOM} approach is the most commonly used method due to its simplicity while still being an effective initialization method in terms of convergence speed and robustness \cite{PEN-ECI}.
+The \texttt{RANDOM} approach is the most commonly used method.
+It is provided with the datasets and a value for $k$ and then randomly selects $k$ points from the dataset as the initial cluster centers.
+Iterating over the dataset, each point is assigned to a random cluster center.
+\texttt{RANDOM} is very popular due to it being an effective initialization method in terms of convergence speed and robustness while being fast in execution \cite{PEN-ECI}.
 Therefore it is assumed to be the default initialization method in this thesis.
+
+Other initialization methods differ in the way they choose the initial cluster centers or assign the initial clusters.
+\texttt{FORGY} provides a similar approach to \texttt{RANDOM}, but the points are initially assigned to the nearest randomly chosen cluster center.
+The usual distance metric is the Euclidean distance \cite{AND-CAA}.
+Despite this being a seemingly better first step, the \texttt{RANDOM} approach has similar results in practice in terms of convergence speed while being less computationally expensive \cite{AND-CAA}.
 
 \subsubsection{General Algorithm}
 \label{subsec:general_algorithm}
@@ -60,18 +69,21 @@ K-means can be implemented in multiple variants.
 The most general implementation using the Euclidean distance is shown in the following.
 \begin{enumerate}
     \item The algorithm requires an input matrix of n data points in z dimensions and the initial cluster centers as k points in z dimensions \cite{HAR-KMA}.
-          The initial cluster centers are chosen according to the used initialization method as explained in \ref{subsec:initialisation_methods}.
+          The initial cluster centers and the initial clustering are chosen according to the used initialization method as explained in \ref{subsec:initialisation_methods}.
+          This review assumes the \texttt{RANDOM} approach as the default initialization method.
     \item The average of each cluster is calculated by using $C_i = \frac{1}{M} \sum_{j=1}^{M}x_j$ with $C_i$ being the average of cluster $i$, $M$ the number of points in cluster $i$, and $x_j$ the $j$-th point in cluster $i$ \cite{SYA-IKC}.
+          $C_i$ is then used as the new cluster center of cluster $i$.
     \item Iterate over all data points assigning each point to the nearest cluster center.
           To calculate the distance, the euclidean distance $d = \sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$ is used.
     \item Steps 2 and 3 are repeated until the criterion function converges.
-          The criterion function is \begin{equation}\label{eq:sse}E=\sum_{i=1}^{k} \sum_{P \in C_i}|p-m_i|\end{equation} with $E$ being the square error-sum, $p$ the point in space, and $m_i$ the average of cluster $C_i$ \cite{LIU-BDE}.
+          The criterion function (Equation \ref{eq:sse}) represents the sum of square errors.
+          It is defined as \begin{equation}\label{eq:sse}E=\sum_{i=1}^{k} \sum_{P \in C_i}|p-m_i|\end{equation} with $p$ being the point in space, and $m_i$ being the average of cluster $C_i$ \cite{LIU-BDE}.
 \end{enumerate}
 
 \subsubsection{Finding k: The Elbow Method}
-The elbow method is a heuristic to find the optimal number $k$ of clusters for a given problem.
+The elbow method is a heuristic to find the optimal number $k$ of clusters for a given problem \cite{SYA-IKC}.
 It is calculated by plotting the square sum of errors (\ref{eq:sse}) against the number of clusters.
-The optimal number of clusters is the point where the graph's slope changes the most, which is the so-called elbow \cite{SYA-IKC}.
+The optimal number of clusters is the point where the graph's slope changes the most, the so-called elbow \cite{SYA-IKC}.
 
 \subsubsection{Data Scaling: The MinMaxScaler}
 The MinMaxScaler is a data scaling tool of the \texttt{Scikit Learn} library \cite{SKL-MMS}.
@@ -81,8 +93,6 @@ For each value $x$ in the dataset is scaled applying \begin{equation}\label{eq:m
       x_{transformed} = \frac{x - x_{min}}{x_{max} - x_{min}}
 \end{equation} for each of the datapoints \cite{JOJ-ENP}.
 This ensures that the different scales of the data do not influence the clustering result and therefore improves the total clustering performance \cite{GOG-WSI}.
-
-% Weniger Detail => Was machen die Papers um zu den Findings zu kommen anstatt
 
 % Was sollen die folgenden beiden sections vermitteln?
 %  Wichtig: Vergleichen zwischen verschiedenen Methoden, aber nur bei großen Unterschieden.
@@ -100,17 +110,21 @@ Three papers provide findings impacting the given research questions.
 Each paper has a different perspective, namely the perspective of the industry, private households, and energy load profiles of a specific country.
 The following section describes the goals of each paper and how the research is conducted to achieve these goals.
 
-"\textit{Big Data-Informed Energy Efficiency Assessment of China Industry Sectors based on K-Means Clustering}" \cite{LIU-BDE} focuses on clustering Chinese industry sectors and distinct companies into three clusters, based on environmental perfomance derived metrics.
+\enquote{\textit{Big Data-Informed Energy Efficiency Assessment of China Industry Sectors based on K-Means Clustering}} by Liu et al. \cite{LIU-BDE} focuses on clustering Chinese industry sectors and distinct companies into three clusters, based on environmental perfomance derived metrics.
+These three clusters are then used to identify and compare the most energy-intensive sectors and companies in big data masses.
 Liu et al. apply k-means clustering on disclosed environmental performance data of 15.128 Chinese companies between 2000 and 2015.
 By applying k-means clustering with a fixed value of $k=3$, the companies and industry sectors are divided into low-, mid-, and high-performing clusters according to the chosen metrics, for example, $SO_2$ emissions.
 
-"\textit{Identifying Home System of Practices for Energy Use with K-Means Clustering}" \cite{MAL-HBP} focuses on finding home systems of practices (HSOPs) by clustering energy load profiles of 39 private households in Blacktown, Australia.
+\enquote{\textit{Identifying Home System of Practices for Energy Use with K-Means Clustering}} by Malatesta et al. \cite{MAL-HBP} focuses on finding home systems of practices (HSOPs) by clustering energy load profiles of 39 private households in Blacktown, Australia.
 Each cluster represents a home system of practices (HSOP), a habit or behavior that alters the standard load profile.
-By applying social theory and survey results distributed to the households' residents afterwards it can be derived how behaviors and habits impact electricity consumption.
+The clustering is executed on the total dataset and separately for each household, each cluster is then labeled as a distinct HSOP.
+This allows the researchers to identify general trends from the total data clustering and precise comparisons between households by comparing the individual household clustering results.
+By applying social theory and survey results distributed to the households' residents afterward it can be derived how behaviors and habits impact electricity consumption.
 
-"\textit{Identification of Natural Disaster Impacted Electricity Laod Profiles with k-means Clustering Algorithm}" \cite{JES-IND} investigates the load profiles of Lombok, Indonesia between 2015 and 2022.
+\enquote{\textit{Identification of Natural Disaster Impacted Electricity Laod Profiles with k-means Clustering Algorithm}} by Jessen et al. \cite{JES-IND} investigates the load profiles of Lombok, Indonesia between 2015 and 2022.
 The data is clustered in a varying number of clusters.
-These clusters are then labeled as normal or abnormal, with abnormal being either natural disaster-impacted or electrical fault-impacted which means, non human induced.
+The value of $k$ is chosen according to the given dataset using the elbow method.
+These clusters are then algorithmically labeled as normal or abnormal, with abnormal being either natural disaster-impacted or electrical fault-impacted which means non-human-induced.
 This shows how k-means helps in understanding patterns, trends and the consequences of different impacts on the electricity load profiles.
 
 All of these papers contribute to understanding general electricity load profiles and how different impacts alter the consumption data.
