@@ -10,13 +10,26 @@
 
 % A case study with larger shares of renewable energy resources in the energy and capacity mix is recommended to investigate the impacts of natural disasters on the renewable-based electricity system [LIU-BDE]
 
-\section{Discussion}
-\label{cha:discussion}
+\section{Discussion and Conclusion}
+\label{cha:discussionAndConclusion}
 
-\subsection{Strengths and Limitations of K-Means}
+% Auf Motivation eingehen
+This review aimed to tackle climate change's root causes in the energy sector.
+This meant understanding general electricity load patterns and using this knowledge to improve the design of energy-saving incentives.
+K-means clustering was introduced as a tool for tackling these problems by applying it to different datasets in the context of two research questions.
+The first research questions aimed to generally understand electricity load patterns by identifying patterns and characteristics in a given dataset.
+Question two aimed to design energy-saving incentives in the context of private housing and industry.
+
+Both research questions showed, that k-means is a powerful tool for spotting trends and characteristics in data.
+It helps to identify the most energy-intensive sectors and companies in big data masses, which helps provide targeted support and reduce information asymmetry \cite{LIU-BDE}.
+It identifies different consumer routines and habits in the consumption data which can lay the foundation for applying more advanced methods and theory, thus revealing even more knowledge \cite{MAL-HBP}.
+Therefore, k-means is a powerful tool for finding trends, identifying characteristics and revealing hidden knowledge in big data masses.
+
+These applications pointed out the strengths and weaknesses of the k-means algorithm.
+
 % Grundlegende Idee: Auf Limitations und Findings die Stärken und Schwächen von K-Means ausformulieren
 \begin{description}
-    \item[Strengths:]
+    \item[Strengths]
     K-means is simple and easy to use on datasets.
     Multiple libraries and data analysis tools support the usage of k-means, for example, the r software environment.
     Jessen et al. \cite{JES-IND} showed that k-means is an effective tool for spotting general trends in large datasets.
@@ -29,7 +42,7 @@
         %     \item Converges every time
         %     \item Linear runtime of $O(n * K * I)$ with $n$ being the number of data points, $k$ being the number of clusters, $i$ being the number of iterations.
     % \end{itemize}
-    \item[Weaknesses:]
+    \item[Weaknesses]
     Jessen et al. \cite{JES-IND} showed that k-means sometimes failed to spot single outliers in the dataset.
     Outliers could only be spotted if they followed a general trend or if the dataset had multiple outliers in the same region that could be assigned to a single cluster.
     Since the algorithm converges to local optima, it has to be executed multiple times to ensure the correctness of the results.
@@ -50,7 +63,7 @@ K-harmonic means provides superior clustering results in low dimensions compared
 MAP-DP (Maximum a Posteriori Dirichlet Process) estimates the number of clusters from the data and therefore does not need the number of clusters to be provided beforehand \cite{RAY-ALT}.
 Despite being less effective in runtime, MAP-DP is proven to deliver overall better results than k-means \cite{RAY-ALT}.
 
-\subsection{Limitations of the Thesis}
+The reviewed papers showed some limitations and gaps in their research.
 % Wie kann man die Limitations der Paper und der Findings auf die zu beantwortenden Research Questions und die Motivation anwenden?
 % Also welche Aspekte der Research Question weißen Lücken auf oder wurden unzureichend behandelt?
 The original motivation was to find and tackle the root causes of climate change in the energy sector by focusing on two factors: analyzing energy load profiles and energy-saving incentives.
@@ -77,5 +90,11 @@ Since the algorithm converges towards local optima, the results are not guarante
 Therefore, multiple executions are necessary to ensure the correctness of the results.
 However, none of the papers performed multiple executions.
 This can lead to result manipulation since an incorrect result can prove a wrong hypothesis despite the correct one being present.
-From the research alone it is not possible to conclude that the k-means algorithm is the optimal choice for designing energy-saving incentives and understanding load patterns in general.
+
+The choice of the best clustering algorithm should be guided by the given requirements of the data and the goals of the analysis \cite{COL-ALT}.
+K-means clustering is among the most popular clustering algorithms.
+This popularity is justified by its simplicity, efficiency in handling big datasets and effectiveness while delivering good results.
+One must weigh the balance between efficiently identifying general trends and patterns as suggested by k-means, and more explicit but less effective algorithms.
+% "So what" message = How does the written report help the reader in the future?
+So, k-means proved as the ideal tool for the given research questions, it is a great starting point in understanding general electricity load patterns and designing energy-saving incentives.
 
