@@ -14,8 +14,8 @@
 \label{cha:discussionAndConclusion}
 
 % Auf Motivation eingehen
-This review aimed to tackle climate change's root causes in the energy sector.
-This meant understanding general electricity load patterns and using this knowledge to improve the design of energy-saving incentives.
+This review aimed to take a first step in the transition to more sustainable energy systems and infrastructures.
+This means understanding general electricity load patterns and using this knowledge to improve the design of energy-saving incentives.
 K-means clustering was introduced as such a tool by applying it to different datasets in the context of two research questions.
 The first research questions aimed to generally understand electricity load patterns by identifying patterns and characteristics in a given dataset.
 Question two aimed to design energy-saving incentives in the context of private housing and industry.
@@ -25,7 +25,7 @@ It helps to identify the most energy-intensive sectors and companies in big data
 It identifies different consumer routines and habits in the consumption data which can lay the foundation for applying more advanced methods and theory, thus revealing even more knowledge \cite{MAL-HBP}.
 Therefore, k-means is a powerful tool for finding trends, identifying characteristics and revealing hidden knowledge in big data masses.
 
-These applications pointed out the strengths and weaknesses of the k-means algorithm.
+Applying this algorithm in different contexts depicted its strengths and weaknesses.
 % Grundlegende Idee: Auf Limitations und Findings die Stärken und Schwächen von K-Means ausformulieren
 % \begin{itemize}
     %     \item Simple and easy to implement and use since a wide range of libraries and tools are available (for example scikit-learn in Python)
@@ -59,11 +59,10 @@ K-harmonic means provides superior clustering results in low dimensions compared
 MAP-DP (Maximum a Posteriori Dirichlet Process) estimates the number of clusters from the data and therefore does not need the number of clusters to be provided beforehand \cite{RAY-ALT}.
 Despite being less effective in runtime, MAP-DP is proven to deliver overall better results than k-means \cite{RAY-ALT}.
 
-The reviewed papers showed some limitations and gaps in their research.
 % Wie kann man die Limitations der Paper und der Findings auf die zu beantwortenden Research Questions und die Motivation anwenden?
 % Also welche Aspekte der Research Question weißen Lücken auf oder wurden unzureichend behandelt?
+The reviewed papers showed some limitations and gaps in their research.
 Some points of the research questions were not fully addressed.
-
 First, the papers were biased toward their choice of energy sources.
 Lombok's energy load profiles portrayed by Jessen et al. \cite{JES-IND} stem mostly from fossil fuels.
 The living lab in Blackwater, Australia, is powered sustainably by solar and using heat pumps \cite{MAL-HBP}.
@@ -71,6 +70,7 @@ Also, each paper focused on a single region with its unique cultural and environ
 Therefore the findings cannot be generalized or applied to other regions.
 This concludes that the design of energy incentives cannot be applied universally by this research alone.
 More research and test data using different energy sources and portraying different regions and environmental conditions are needed to fully prove the k-mean's effectiveness in designing energy-saving incentives. 
+Also, in terms of sustainability, more research on sustainable energy sources is needed to generate knowledge regarding these energy sources.
 
 Additionally, it is not communicated to what extent the COVID-19 pandemic affected the research results.
 Malatesta et al. \cite{MAL-HBP} found non-routinized patterns due to people working from home, which most likely is a result of the pandemic and people being forced to stay and work from home, adapting to this new situation.
@@ -85,7 +85,7 @@ Therefore, multiple executions are necessary to ensure the correctness of the re
 However, none of the papers performed multiple executions.
 This can lead to result manipulation since an incorrect result can prove a wrong hypothesis despite the correct one being present.
 
-The choice of the best clustering algorithm should be guided by the given requirements of the data and the goals of the analysis \cite{COL-ALT}.
+To conclude, the choice of the best clustering algorithm should be guided by the given requirements of the data and the goals of the analysis \cite{COL-ALT}.
 K-means clustering is among the most popular clustering algorithms.
 This popularity is justified by its simplicity, efficiency in handling big datasets and effectiveness while delivering good results.
 One must weigh the balance between efficiently identifying general trends and patterns as suggested by k-means, and more explicit but less effective algorithms.
