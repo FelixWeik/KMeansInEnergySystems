@@ -16,11 +16,12 @@
 % Auf Motivation eingehen
 This review takes the first step in the transition to more sustainable energy systems and infrastructures.
 This means understanding general electricity load patterns and using this knowledge to improve the design of energy-saving incentives.
-K-means clustering is introduced as such a tool by applying it to different datasets in the context of two research questions.
-The first research question aims to understand electricity load patterns by identifying patterns and characteristics in a given dataset.
+K-means clustering offers these functionalities.
+This work applies it to different datasets in the context of two research questions.
+The first research question aims to understand electricity load profiles by identifying patterns and characteristics in a given dataset.
 Question two aims to design energy-saving incentives in the context of private housing and industry.
 
-It helps to identify the most energy-intensive sectors and companies in big data masses, which helps provide targeted support and reduce information asymmetry \cite{LIU-BDE}.
+K-means helps to identify the most energy-intensive sectors and companies in big data masses, which helps provide targeted support and reduce information asymmetry \cite{LIU-BDE}.
 Furthermore, k-means identifies different consumer routines and habits in the consumption data which can lay the foundation for applying more advanced methods and theory, thus revealing even more knowledge \cite{MAL-HBP}.
 Therefore, k-means is a powerful tool for finding trends, identifying characteristics and revealing hidden knowledge in big data masses.
 
@@ -42,10 +43,10 @@ However, outliers can only be spotted if they follow a general trend or if the d
 This limits the scope of k-means.
 Finally, the algorithm converges every time, so a result is guaranteed \cite{SEL-GCT}.
 Since it converges to local optima, multiple executions are necessary to ensure the correctness of the results.
-This makes the fast-executing algorithm with its linear runtime of $O(n * K * I)$ ($n$ being the number of data points, $k$ being the number of clusters, $i$ being the number of iterations) more time-consuming and computationally expensive in practice.
+This makes the fast-executing algorithm with its linear runtime of $O(n * k * i)$ ($n$ being the number of data points, $k$ being the number of clusters, $i$ being the number of iterations) more time-consuming and computationally expensive in practice.
 
-% Vergleich zu anderen Algorithmen einbauen
-Different clustering algorithms are proven to be more effective in improving the mentioned flaws.
+% Vergleich zu anderen Algorithmen 
+Different clustering algorithms are proven to improve the mentioned flaws.
 K-harmonic means provides superior clustering results in low dimensions compared to k-means \cite{HAM-ALT}.
 MAP-DP (Maximum a Posteriori Dirichlet Process) estimates the number of clusters from the data and therefore does not need the number of clusters to be provided beforehand \cite{RAY-ALT}.
 Despite being less effective in runtime, MAP-DP is proven to deliver overall better results than k-means \cite{RAY-ALT}.
@@ -62,7 +63,7 @@ This concludes that the design of energy incentives cannot be applied universall
 More research and test data using different energy sources and portraying different regions and environmental conditions are needed to fully prove the k-mean's effectiveness in designing energy-saving incentives. 
 Also, in terms of sustainability, more research on sustainable energy sources is needed to generate knowledge regarding these energy sources.
 
-Additionally, it is not communicated to what extent the COVID-19 pandemic affected the research results.
+Additionally, it is not communicated to what extent the COVID-19 pandemic affects the research results.
 Malatesta et al. \cite{MAL-HBP} find non-routinized patterns due to people working from home, which most likely is a result of the pandemic and people being forced to stay and work from home, adapting to this new situation.
 This distorts the results and makes them less applicable to normal conditions.
 The pandemic also affects the total energy load profiles, which can lead to false clustering results.
@@ -70,9 +71,9 @@ Jessen et al. \cite{JES-IND} detect an increasing energy consumption over the ye
 Therefore, the results are not fully reliable and need to be re-evaluated under normal circumstances.
 
 Finally, the papers do not prove the correctness of the k-means algorithm's results.
-Since the algorithm converges towards local optima, the results are not guaranteed to be the best possible solution.
+Since the algorithm converges towards local optima \cite{SEL-GCT}, the results are not guaranteed to be the best possible solution.
 Therefore, multiple executions are necessary to ensure the correctness of the results.
-However, none of the papers perform multiple executions.
+However, none of the papers mention multiple executions on the same dataset.
 This can lead to result manipulation since an incorrect result can prove a wrong hypothesis despite the correct one being present.
 
 To conclude, the choice of the best clustering algorithm should be guided by the given requirements of the data and the goals of the analysis \cite{COL-ALT}.
@@ -80,5 +81,5 @@ K-means clustering is among the most popular clustering algorithms.
 This popularity is due to its simplicity, efficiency in handling big datasets and effectiveness while delivering good results.
 One must weigh the balance between efficiently identifying general trends and patterns as suggested by k-means, and more explicit but less effective algorithms.
 % "So what" message = How does the written report help the reader in the future?
-So, k-means proved as the ideal tool for the given research questions, it is a great starting point in understanding general electricity load patterns and designing energy-saving incentives.
+So, k-means proves as the ideal tool for the given research questions, it is a great starting point in understanding general electricity load patterns and designing energy-saving incentives.
 
