@@ -17,13 +17,13 @@
 This review takes the first step in the transition to more sustainable energy systems and infrastructures.
 This means understanding general electricity load patterns and using this knowledge to improve the design of energy-saving incentives.
 K-means clustering offers these functionalities.
-This work applies it to different datasets in the context of two research questions.
+This work applies this clustering algorithm to different datasets in the context of two research questions.
 The first research question aims to understand electricity load profiles by identifying patterns and characteristics in a given dataset.
-Question two aims to design energy-saving incentives in the context of private housing and industry.
+Question two aims to design energy-saving incentives in the context of private housing and the industry.
 
 K-means helps to identify the most energy-intensive sectors and companies in big data masses, which helps provide targeted support and reduce information asymmetry \cite{LIU-BDE}.
 Furthermore, k-means identifies different consumer routines and habits in the consumption data which can lay the foundation for applying more advanced methods and theory, thus revealing even more knowledge \cite{MAL-HBP}.
-Therefore, k-means is a powerful tool for finding trends, identifying characteristics and revealing hidden knowledge in big data masses.
+Therefore, k-means is a powerful tool for finding trends, identifying characteristics and revealing hidden knowledge in big datasets.
 
 % \begin{itemize}
     %     \item Simple and easy to implement and use since a wide range of libraries and tools are available (for example scikit-learn in Python), Tideous initialization process until actual execution takes place
@@ -35,7 +35,7 @@ Therefore, k-means is a powerful tool for finding trends, identifying characteri
 The application of k-means in diverse contexts underscores its strengths and weaknesses.
 The strengths of k-means lie in its simplicity and efficiency in handling big datasets.
 This implies that k-means can easily take on large datasets like several thousand companies' environmental performance data \cite{LIU-BDE}.
-Multiple libraries and data analysis tools support the usage of k-means, for example, the \texttt{R Software Environment} \cite{R-SOF}.
+Multiple libraries and data analysis tools support the usage of k-means, for example, the R Software Environment \cite{R-SOF}.
 The initialization processes of finding the optimal number for $k$ and the initial cluster centers are taken care of by these libraries and tools.
 However, these additional steps make the initialization process more time-consuming.
 Jessen et al. \cite{JES-IND} show the effectiveness of k-means in spotting general trends in large datasets.
@@ -46,7 +46,7 @@ Since it converges to local optima, multiple executions are necessary to ensure 
 This makes the fast-executing algorithm with its linear runtime of $O(n * k * i)$ ($n$ being the number of data points, $k$ being the number of clusters, $i$ being the number of iterations) more time-consuming and computationally expensive in practice.
 
 % Vergleich zu anderen Algorithmen 
-Different clustering algorithms are proven to improve the mentioned flaws.
+Different clustering algorithms improve the mentioned flaws.
 K-harmonic means provides superior clustering results in low dimensions compared to k-means \cite{HAM-ALT}.
 MAP-DP (Maximum a Posteriori Dirichlet Process) estimates the number of clusters from the data and therefore does not need the number of clusters to be provided beforehand \cite{RAY-ALT}.
 Despite being less effective in runtime, MAP-DP is proven to deliver overall better results than k-means \cite{RAY-ALT}.
@@ -64,7 +64,7 @@ More research and test data using different energy sources and portraying differ
 Also, in terms of sustainability, more research on sustainable energy sources is needed to generate knowledge regarding these energy sources.
 
 Additionally, it is not communicated to what extent the COVID-19 pandemic affects the research results.
-Malatesta et al. \cite{MAL-HBP} find non-routinized patterns due to people working from home, which most likely is a result of the pandemic and people being forced to stay and work from home, adapting to this new situation.
+Malatesta et al. \cite{MAL-HBP} find non-routinized patterns due to people working and studying from home, which most likely is a result of the pandemic and people being forced to stay and work from home, adapting to this new situation.
 This distorts the results and makes them less applicable to normal conditions.
 The pandemic also affects the total energy load profiles, which can lead to false clustering results.
 Jessen et al. \cite{JES-IND} detect an increasing energy consumption over the years, especially in 2020 and 2021 but did not check whether these results stem from the pandemic or other factors.
@@ -82,4 +82,4 @@ This popularity is due to its simplicity, efficiency in handling big datasets an
 One must weigh the balance between efficiently identifying general trends and patterns as suggested by k-means, and more explicit but less effective algorithms.
 % "So what" message = How does the written report help the reader in the future?
 So, k-means proves as the ideal tool for the given research questions, it is a great starting point in understanding general electricity load patterns and designing energy-saving incentives.
-
+Energy load profiles can be understood using k-means, and the results can be used to design energy-saving incentives.
